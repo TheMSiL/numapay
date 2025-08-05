@@ -1,0 +1,19 @@
+<svg width="58" height="63" viewBox="0 0 58 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Plus icon">
+<g id="Ellipse 30" filter="url(#filter0_d_2006_1445)">
+<circle cx="29" cy="29" r="27" fill="#F8F8F8"/>
+<circle cx="29" cy="29" r="28.5" stroke="#0A0A0A"/>
+</g>
+<path id="Vector 1" d="M19 30.5L25 37L40 21" stroke="black" stroke-width="4"/>
+</g>
+<defs>
+<filter id="filter0_d_2006_1445" x="0" y="0" width="58" height="63" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feOffset dy="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 0.4 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2006_1445"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2006_1445" result="shape"/>
+</filter>
+</defs>
+</svg>

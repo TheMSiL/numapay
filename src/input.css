@@ -19,11 +19,11 @@
   }
 
   .primary_btn {
-    @apply bg-mainYellow w-[12.5rem] h-[3.5rem] flex items-center justify-center text-lg rounded-[6.25rem] font-medium relative z-10 overflow-hidden disabled:bg-mineShaft disabled:text-mainYellow;
+    @apply bg-mainYellow w-[12.5rem] h-[3.5rem] flex items-center justify-center text-lg rounded-[6.25rem] font-medium relative  overflow-hidden disabled:bg-mineShaft disabled:text-mainYellow z-[99];
   }
 
   .secondary_btn {
-    @apply bg-primary text-mainYellow hover:text-white w-[12.5rem] h-[3.5rem] flex items-center justify-center text-lg rounded-[6.25rem] font-medium relative z-10 overflow-hidden disabled:bg-mineShaft disabled:text-mainYellow;
+    @apply bg-primary text-mainYellow hover:text-white w-[12.5rem] h-[3.5rem] flex items-center justify-center text-lg rounded-[6.25rem] font-medium relative overflow-hidden disabled:bg-mineShaft disabled:text-mainYellow z-[99];
   }
 
   .about_item {
@@ -106,7 +106,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("./assets/hero/mainBg.svg") no-repeat center / cover;
+    background: #0A0A0A;
     z-index: 1;
     pointer-events: none;
   }

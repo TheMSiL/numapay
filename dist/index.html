@@ -1,1374 +1,1382 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon" />
-    <title>NumaPay</title>
-    <link rel="stylesheet" href="./output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="text-primary font-sans">
-    <header
-      class="py-5 sm:py-[1.156rem] bg-codGray text-concrete h-20 sticky top-0 z-50"
-    >
-      <div class="content_container flex items-center justify-between">
-        <div>
-          <img src="./assets/logo.svg" alt="NumaPay" />
-        </div>
-        <nav class="hidden l:block">
-          <ul class="flex items-center gap-6 lg:gap-14">
-            <li class="header_link"><a href="#about">About</a></li>
-            <li class="header_link"><a href="#business">Business</a></li>
-            <li class="header_link"><a href="#merchants">Merchants</a></li>
-            <li class="header_link"><a href="#rates">Rates</a></li>
-            <li class="header_link"><a href="#faq">FAQ</a></li>
-            <li class="header_link"><a href="#developers">Developers</a></li>
-          </ul>
-        </nav>
-        <div class="flex items-center gap-4 l:block">
-          <button
-            class="rounded-[6.25rem] border border-mainYellow text-white px-4 sm:px-5 py-2 text-sm sm:text-l duration-300 font-medium hover:bg-mainYellow hover:text-primary disabled:border-mainGray disabled:text-mainGray disabled:hover:bg-transparent disabled:hover:text-mainGray"
-          >
-            Apply now
-          </button>
-          <button
-            id="burger"
-            class="l:hidden block w-[1.188rem] h-[0.938rem] cursor-pointer"
-          >
-            <svg
-              width="19"
-              height="15"
-              viewBox="0 0 19 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              id="show_burger"
-              class="block"
-            >
-              <rect y="0.5" width="19" height="2" rx="1" fill="white" />
-              <rect y="6.5" width="19" height="2" rx="1" fill="white" />
-              <rect y="12.5" width="19" height="2" rx="1" fill="white" />
-            </svg>
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              id="close_burger"
-              class="hidden"
-            >
-              <path
-                d="M13.2924 0.782485C13.6829 0.391961 14.3169 0.391961 14.7074 0.782485C15.0976 1.17294 15.0976 1.80609 14.7074 2.19655L9.40276 7.49928L14.7065 12.803C15.097 13.1935 15.097 13.8265 14.7065 14.2171C14.3159 14.6076 13.6829 14.6076 13.2924 14.2171L7.98869 8.91334L2.68596 14.2171C2.29544 14.6076 1.66242 14.6076 1.2719 14.2171C0.881602 13.8265 0.881449 13.1934 1.2719 12.803L6.57463 7.49928L1.2719 2.19655C0.881373 1.80602 0.881373 1.17301 1.2719 0.782485C1.66242 0.391961 2.29544 0.391961 2.68596 0.782485L7.98869 6.08522L13.2924 0.782485Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-    <div
-      class="fixed l:hidden top-[-105%] grid overflow-y-auto duration-300 left-0 w-screen bg-black z-40"
-      style="height: calc(var(--vh, 1vh) * 100 - 5rem)"
-      id="overlay"
-    >
-      <ul class="flex flex-col items-start">
-        <li class="header_link"><a href="#about">About</a></li>
-        <li class="header_link"><a href="#business">Business</a></li>
-        <li class="header_link"><a href="#merchants">Merchants</a></li>
-        <li class="header_link"><a href="#rates">Rates</a></li>
-        <li class="header_link"><a href="#faq">FAQ</a></li>
-        <li class="header_link"><a href="#developers">Developers</a></li>
-      </ul>
-      <div class="grid gap-[1.625rem] sm:mt-[6.25rem] mt-auto mb-10">
-        <div class="px-6">
-          <button class="primary_btn w-full">Apply now</button>
-        </div>
-        <div class="h-[0.063rem] w-full bg-mineShaft"></div>
-        <div class="flex items-center justify-center gap-10">
-          <a target="_blank" href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="38"
-              height="38"
-              viewBox="0 0 38 38"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_2002_19460)">
-                <path
-                  d="M24.8803 0.285156C29.3146 0.292861 29.4874 0.329808 30.354 0.455078C32.1424 0.713049 33.6433 1.42645 34.8706 2.59863C35.5582 3.26037 36.0319 3.9078 36.4585 4.77441C36.9783 5.83304 37.234 6.83472 37.351 8.32422C37.3761 8.64556 37.3872 13.7307 37.3872 18.8193C37.3872 23.908 37.3771 29.0036 37.352 29.3232C37.2364 30.7891 36.9806 31.7992 36.477 32.8379C35.4755 34.9038 33.6353 36.4108 31.4126 36.9844C30.6065 37.1927 29.877 37.2905 28.6215 37.3496C28.1736 37.3724 23.4884 37.3779 18.8032 37.3779C14.1178 37.3779 9.43446 37.3637 8.97505 37.3438C7.89096 37.2924 7.04631 37.1842 6.28169 36.9873C4.07327 36.4166 2.19886 34.8869 1.21724 32.8496C0.703657 31.7853 0.460888 30.812 0.332475 29.2656C0.295381 28.8262 0.286577 26.563 0.286577 18.8242C0.286577 16.2169 0.283724 14.2729 0.286577 12.7959C0.293997 8.36514 0.330949 8.18777 0.456499 7.32031C0.714793 5.53363 1.42799 4.03037 2.60494 2.80859C3.25121 2.13863 3.90646 1.66036 4.73677 1.24805C5.81401 0.711759 6.80304 0.462185 8.39205 0.330078C8.83233 0.293553 11.0976 0.285156 18.8422 0.285156H24.8803ZM18.8315 5.13574C15.114 5.13575 14.6466 5.15228 13.186 5.21875C11.7281 5.28555 10.7326 5.51678 9.86177 5.85547C8.96114 6.20529 8.19716 6.67311 7.43599 7.43457C6.67416 8.19585 6.2059 8.95984 5.85494 9.86035C5.5154 10.7315 5.28387 11.7272 5.21822 13.1846C5.15287 14.6456 5.13619 15.1131 5.13619 18.833C5.13619 22.5528 5.15299 23.0185 5.21919 24.4795C5.28627 25.9375 5.51654 26.9329 5.85494 27.8037C6.20503 28.7045 6.67354 29.4682 7.43501 30.2295C8.19603 30.9914 8.96053 31.4607 9.8608 31.8105C10.7321 32.1492 11.7275 32.3805 13.185 32.4473C14.646 32.5138 15.113 32.5303 18.8325 32.5303C22.5523 32.5303 23.018 32.5138 24.479 32.4473C25.9367 32.3805 26.9328 32.1492 27.8042 31.8105C28.7047 31.4607 29.4679 30.9914 30.229 30.2295C30.9908 29.4682 31.4591 28.7042 31.81 27.8037C32.1467 26.9326 32.3783 25.937 32.4467 24.4795C32.5124 23.0185 32.5288 22.5528 32.5288 18.833C32.5288 15.1135 32.5123 14.6463 32.4467 13.1855C32.3783 11.7274 32.1467 10.7313 31.81 9.86035C31.4591 8.95966 30.9907 8.19578 30.229 7.43457C29.4673 6.67285 28.7056 6.205 27.8042 5.85547C26.9311 5.51679 25.9349 5.28555 24.477 5.21875C23.0163 5.15227 22.5507 5.13575 18.8315 5.13574ZM17.6049 7.60449C17.9695 7.60392 18.3765 7.60449 18.8335 7.60449C22.4904 7.60449 22.9245 7.61699 24.3686 7.68262C25.7039 7.74369 26.4288 7.96683 26.9116 8.1543C27.5507 8.40255 28.0067 8.69933 28.4858 9.17871C28.9651 9.65801 29.2614 10.1149 29.5102 10.7539C29.6977 11.2362 29.9211 11.9614 29.9819 13.2969C30.0475 14.7407 30.062 15.1748 30.062 18.8301C30.062 22.4848 30.0475 22.9188 29.9819 24.3623C29.9208 25.6978 29.6977 26.423 29.5102 26.9053C29.262 27.5443 28.965 27.9995 28.4858 28.4785C28.0065 28.9579 27.5509 29.2547 26.9116 29.5029C26.4294 29.6913 25.7039 29.9145 24.3686 29.9756C22.9248 30.0412 22.4904 30.0547 18.8335 30.0547C15.1766 30.0547 14.7431 30.0412 13.2993 29.9756C11.9641 29.914 11.2394 29.6904 10.7563 29.5029C10.1172 29.2547 9.66045 28.9578 9.18111 28.4785C8.70174 27.9991 8.40454 27.5438 8.15572 26.9043C7.96825 26.422 7.74482 25.6968 7.68404 24.3613C7.61842 22.9177 7.60591 22.4836 7.60591 18.8262C7.60591 15.1687 7.61841 14.7368 7.68404 13.293C7.74513 11.9577 7.96826 11.2328 8.15572 10.75C8.40396 10.1109 8.70176 9.65416 9.18111 9.1748C9.66041 8.69554 10.1172 8.39918 10.7563 8.15039C11.2391 7.96207 11.964 7.73909 13.2993 7.67773C14.5627 7.62067 15.0525 7.60344 17.6049 7.60059V7.60449ZM18.8335 11.7988C14.9493 11.7991 11.8002 14.9486 11.8002 18.833C11.8003 22.7173 14.9493 25.865 18.8335 25.8652C22.7178 25.8652 25.8666 22.7175 25.8667 18.833C25.8667 14.9485 22.7179 11.7988 18.8335 11.7988ZM18.8335 14.2676C21.3548 14.2676 23.3999 16.3113 23.3999 18.833C23.3998 21.3543 21.3547 23.3984 18.8335 23.3984C16.3121 23.3982 14.2681 21.3542 14.268 18.833C14.268 16.3115 16.3121 14.2678 18.8335 14.2676ZM26.145 9.87891C25.2376 9.87893 24.5015 10.6138 24.5014 11.5215C24.5014 12.4289 25.2376 13.165 26.145 13.165C27.0524 13.165 27.7885 12.4289 27.7885 11.5215C27.7885 10.6141 27.0523 9.87793 26.145 9.87793V9.87891Z"
-                  fill="#828282"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_2002_19460">
-                  <rect width="37.6667" height="37.6667" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-          <a href="#" target="_blank">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="38"
-              height="38"
-              viewBox="0 0 38 38"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_2002_19476)">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M4.51853 37.6667H33.8148C36.1262 37.6667 38 35.7929 38 33.4815V4.18519C38 1.87377 36.1262 0 33.8148 0H4.51853C2.20711 0 0.333344 1.87377 0.333344 4.18519V33.4815C0.333344 35.7929 2.20711 37.6667 4.51853 37.6667ZM32.7685 32.4351H27.179V22.9149C27.179 20.3047 26.1872 18.846 24.1212 18.846C21.8738 18.846 20.6995 20.364 20.6995 22.9149V32.4351H15.3128V14.2993H20.6995V16.7421C20.6995 16.7421 22.3192 13.7452 26.1677 13.7452C30.0145 13.7452 32.7685 16.0942 32.7685 20.9526V32.4351ZM8.88646 11.9245C7.05163 11.9245 5.56481 10.426 5.56481 8.57794C5.56481 6.72984 7.05163 5.23135 8.88646 5.23135C10.7213 5.23135 12.2072 6.72984 12.2072 8.57794C12.2072 10.426 10.7213 11.9245 8.88646 11.9245ZM6.10499 32.4351H11.722V14.2993H6.10499V32.4351Z"
-                  fill="#828282"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_2002_19476">
-                  <rect
-                    width="37.6667"
-                    height="37.6667"
-                    fill="white"
-                    transform="translate(0.333344)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <main>
-      <div class="bg-primary hero relative overflow-hidden">
-        <div
-          class="content_container mt-9 sm:mt-32 ll:mt-0 flex flex-col items-start w-full h-full justify-center relative z-10"
-        >
-          <h1
-            class="sm:max-w-[45rem] max-w-full ll:mx-0 mx-auto text-3xl s:text-4xl sm:text-5xl xl:text-7xl 2xl:text-8xl relative font-medium text-white mb-8 sm:mb-16"
-          >
-            <p class="w-full block text-white ll:text-right">NumaPay:</p>
-            <p>the last refuge of</p>
-            <div
-              class="flex sm:flex-row flex-col sm:items-center gap-4 sm:gap-12"
-            >
-              <p class="sm:text-left text-right">freedom</p>
-              <p class="s:text-lg text-base text-mainYellow">
-                No KYC and no KYB cryptoprocessing
-              </p>
-            </div>
-          </h1>
-          <button
-            class="primary_btn ll:mx-0 sm:w-[12.5rem] mx-auto ll:mb-0 md:mb-10"
-          >
-            Speak an expert
-          </button>
-          <div
-            class="ll:absolute relative sm:-bottom-24 md:bottom-0 md:mt-0 sm:-mt-28 right-0 mx-auto xl:-right-2 2xl:-right-28 z-10"
-          >
-            <img
-              class="relative mx-auto max-w-[15.625rem] sm:max-w-max z-20"
-              src="./assets/hero/iphone.png"
-              alt="phone"
-            />
-            <img
-              src="./assets/hero/tron.svg"
-              alt="tron"
-              class="absolute w-10 h-10 sm:w-20 sm:h-20 top-8 sm:top-6 left-0 sm:left-6 z-10"
-              id="coin_1"
-            />
-            <img
-              src="./assets/hero/bitcoin.svg"
-              alt="bitcoin"
-              class="absolute w-[3.75rem] h-[3.75rem] sm:w-[6.438rem] sm:h-[6.438rem] top-12 sm:top-44 left-10 sm:left-36 z-20"
-              id="coin_2"
-            />
-            <img
-              src="./assets/hero/eth.svg"
-              alt="eth"
-              class="absolute sm:w-[8.188rem] w-[5.25rem] h-[5.25rem] sm:h-[8.188rem] sm:top-80 top-36 sm:left-5 left-0 z-30"
-              id="coin_3"
-            />
-            <img
-              src="./assets/hero/dollar.svg"
-              alt="dollar"
-              class="absolute top-28 sm:top-64 sm:w-[4.25rem] sm:h-[4.25rem] w-10 h-10 right-0 sm:-right-10 z-30"
-              id="coin_4"
-            />
-            <img
-              src="./assets/hero/tether.svg"
-              alt="tether"
-              class="absolute bottom-0 sm:right-10 z-10 sm:w-[12.125rem] sm:h-[12.125rem] w-[7.5rem] h-[7.5rem] sm:bottom-0 -right-10"
-              id="coin_5"
-            />
-            <div class="svg-container">
-              <svg
-                class="line line-1 absolute bottom-0 sm:bottom-60 sm:scale-[1] scale-[0.4] sm:-right-20 -right-60 z-20"
-                xmlns="http://www.w3.org/2000/svg"
-                width="730"
-                height="266"
-                viewBox="0 0 730 266"
-                fill="none"
-              >
-                <path
-                  class="line-path"
-                  d="M230.863 93.5411C88.1901 146.484 -8.5774 206.307 1.43476 240.207C13.8797 282.345 186.588 268.478 387.189 209.233C587.79 149.988 740.321 67.8004 727.876 25.6623C721.513 4.11762 673.255 -2.78629 600.794 3.5299"
-                  stroke="url(#paint0_linear_2228_734)"
-                  stroke-width="1.4"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2228_734"
-                    x1="34"
-                    y1="112.248"
-                    x2="369.355"
-                    y2="319.041"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#1C1C1C" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.39423"
-                      stop-color="#B3B34A"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="white"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.725961"
-                      stop-color="#E3E35B"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#1C1C1C"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="./assets/fav.png" type="image/x-icon" />
+		<title>NumaPay</title>
+		<link rel="stylesheet" href="./output.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="text-primary font-sans">
+		<header
+			class="py-5 sm:py-[1.156rem] bg-codGray text-concrete h-20 sticky top-0 z-50"
+		>
+			<div class="content_container flex items-center justify-between">
+				<div>
+					<img src="./assets/logo.svg" alt="NumaPay" />
+				</div>
+				<nav class="hidden l:block">
+					<ul class="flex items-center gap-6 lg:gap-14">
+						<li class="header_link"><a href="#about">About</a></li>
+						<li class="header_link"><a href="#business">Business</a></li>
+						<li class="header_link"><a href="#merchants">Merchants</a></li>
+						<li class="header_link"><a href="#rates">Rates</a></li>
+						<li class="header_link"><a href="#faq">FAQ</a></li>
+						<li class="header_link"><a href="#developers">Developers</a></li>
+					</ul>
+				</nav>
+				<div class="flex items-center gap-4 l:block">
+					<button
+						class="rounded-[6.25rem] border border-mainYellow text-white px-4 sm:px-5 py-2 text-sm sm:text-l duration-300 font-medium hover:bg-mainYellow hover:text-primary disabled:border-mainGray disabled:text-mainGray disabled:hover:bg-transparent disabled:hover:text-mainGray"
+					>
+						Apply now
+					</button>
+					<button
+						id="burger"
+						class="l:hidden block w-[1.188rem] h-[0.938rem] cursor-pointer"
+					>
+						<svg
+							width="19"
+							height="15"
+							viewBox="0 0 19 15"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							id="show_burger"
+							class="block"
+						>
+							<rect y="0.5" width="19" height="2" rx="1" fill="white" />
+							<rect y="6.5" width="19" height="2" rx="1" fill="white" />
+							<rect y="12.5" width="19" height="2" rx="1" fill="white" />
+						</svg>
+						<svg
+							width="15"
+							height="15"
+							viewBox="0 0 15 15"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							id="close_burger"
+							class="hidden"
+						>
+							<path
+								d="M13.2924 0.782485C13.6829 0.391961 14.3169 0.391961 14.7074 0.782485C15.0976 1.17294 15.0976 1.80609 14.7074 2.19655L9.40276 7.49928L14.7065 12.803C15.097 13.1935 15.097 13.8265 14.7065 14.2171C14.3159 14.6076 13.6829 14.6076 13.2924 14.2171L7.98869 8.91334L2.68596 14.2171C2.29544 14.6076 1.66242 14.6076 1.2719 14.2171C0.881602 13.8265 0.881449 13.1934 1.2719 12.803L6.57463 7.49928L1.2719 2.19655C0.881373 1.80602 0.881373 1.17301 1.2719 0.782485C1.66242 0.391961 2.29544 0.391961 2.68596 0.782485L7.98869 6.08522L13.2924 0.782485Z"
+								fill="white"
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div
+			class="fixed l:hidden top-[-105%] grid overflow-y-auto duration-300 left-0 w-screen bg-black z-40"
+			style="height: calc(var(--vh, 1vh) * 100 - 5rem)"
+			id="overlay"
+		>
+			<ul class="flex flex-col items-start">
+				<li class="header_link"><a href="#about">About</a></li>
+				<li class="header_link"><a href="#business">Business</a></li>
+				<li class="header_link"><a href="#merchants">Merchants</a></li>
+				<li class="header_link"><a href="#rates">Rates</a></li>
+				<li class="header_link"><a href="#faq">FAQ</a></li>
+				<li class="header_link"><a href="#developers">Developers</a></li>
+			</ul>
+			<div class="grid gap-[1.625rem] sm:mt-[6.25rem] mt-auto mb-10">
+				<div class="px-6">
+					<button class="primary_btn w-full">Apply now</button>
+				</div>
+				<div class="h-[0.063rem] w-full bg-mineShaft"></div>
+				<div class="flex items-center justify-center gap-10">
+					<a target="_blank" href="#">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="38"
+							height="38"
+							viewBox="0 0 38 38"
+							fill="none"
+						>
+							<g clip-path="url(#clip0_2002_19460)">
+								<path
+									d="M24.8803 0.285156C29.3146 0.292861 29.4874 0.329808 30.354 0.455078C32.1424 0.713049 33.6433 1.42645 34.8706 2.59863C35.5582 3.26037 36.0319 3.9078 36.4585 4.77441C36.9783 5.83304 37.234 6.83472 37.351 8.32422C37.3761 8.64556 37.3872 13.7307 37.3872 18.8193C37.3872 23.908 37.3771 29.0036 37.352 29.3232C37.2364 30.7891 36.9806 31.7992 36.477 32.8379C35.4755 34.9038 33.6353 36.4108 31.4126 36.9844C30.6065 37.1927 29.877 37.2905 28.6215 37.3496C28.1736 37.3724 23.4884 37.3779 18.8032 37.3779C14.1178 37.3779 9.43446 37.3637 8.97505 37.3438C7.89096 37.2924 7.04631 37.1842 6.28169 36.9873C4.07327 36.4166 2.19886 34.8869 1.21724 32.8496C0.703657 31.7853 0.460888 30.812 0.332475 29.2656C0.295381 28.8262 0.286577 26.563 0.286577 18.8242C0.286577 16.2169 0.283724 14.2729 0.286577 12.7959C0.293997 8.36514 0.330949 8.18777 0.456499 7.32031C0.714793 5.53363 1.42799 4.03037 2.60494 2.80859C3.25121 2.13863 3.90646 1.66036 4.73677 1.24805C5.81401 0.711759 6.80304 0.462185 8.39205 0.330078C8.83233 0.293553 11.0976 0.285156 18.8422 0.285156H24.8803ZM18.8315 5.13574C15.114 5.13575 14.6466 5.15228 13.186 5.21875C11.7281 5.28555 10.7326 5.51678 9.86177 5.85547C8.96114 6.20529 8.19716 6.67311 7.43599 7.43457C6.67416 8.19585 6.2059 8.95984 5.85494 9.86035C5.5154 10.7315 5.28387 11.7272 5.21822 13.1846C5.15287 14.6456 5.13619 15.1131 5.13619 18.833C5.13619 22.5528 5.15299 23.0185 5.21919 24.4795C5.28627 25.9375 5.51654 26.9329 5.85494 27.8037C6.20503 28.7045 6.67354 29.4682 7.43501 30.2295C8.19603 30.9914 8.96053 31.4607 9.8608 31.8105C10.7321 32.1492 11.7275 32.3805 13.185 32.4473C14.646 32.5138 15.113 32.5303 18.8325 32.5303C22.5523 32.5303 23.018 32.5138 24.479 32.4473C25.9367 32.3805 26.9328 32.1492 27.8042 31.8105C28.7047 31.4607 29.4679 30.9914 30.229 30.2295C30.9908 29.4682 31.4591 28.7042 31.81 27.8037C32.1467 26.9326 32.3783 25.937 32.4467 24.4795C32.5124 23.0185 32.5288 22.5528 32.5288 18.833C32.5288 15.1135 32.5123 14.6463 32.4467 13.1855C32.3783 11.7274 32.1467 10.7313 31.81 9.86035C31.4591 8.95966 30.9907 8.19578 30.229 7.43457C29.4673 6.67285 28.7056 6.205 27.8042 5.85547C26.9311 5.51679 25.9349 5.28555 24.477 5.21875C23.0163 5.15227 22.5507 5.13575 18.8315 5.13574ZM17.6049 7.60449C17.9695 7.60392 18.3765 7.60449 18.8335 7.60449C22.4904 7.60449 22.9245 7.61699 24.3686 7.68262C25.7039 7.74369 26.4288 7.96683 26.9116 8.1543C27.5507 8.40255 28.0067 8.69933 28.4858 9.17871C28.9651 9.65801 29.2614 10.1149 29.5102 10.7539C29.6977 11.2362 29.9211 11.9614 29.9819 13.2969C30.0475 14.7407 30.062 15.1748 30.062 18.8301C30.062 22.4848 30.0475 22.9188 29.9819 24.3623C29.9208 25.6978 29.6977 26.423 29.5102 26.9053C29.262 27.5443 28.965 27.9995 28.4858 28.4785C28.0065 28.9579 27.5509 29.2547 26.9116 29.5029C26.4294 29.6913 25.7039 29.9145 24.3686 29.9756C22.9248 30.0412 22.4904 30.0547 18.8335 30.0547C15.1766 30.0547 14.7431 30.0412 13.2993 29.9756C11.9641 29.914 11.2394 29.6904 10.7563 29.5029C10.1172 29.2547 9.66045 28.9578 9.18111 28.4785C8.70174 27.9991 8.40454 27.5438 8.15572 26.9043C7.96825 26.422 7.74482 25.6968 7.68404 24.3613C7.61842 22.9177 7.60591 22.4836 7.60591 18.8262C7.60591 15.1687 7.61841 14.7368 7.68404 13.293C7.74513 11.9577 7.96826 11.2328 8.15572 10.75C8.40396 10.1109 8.70176 9.65416 9.18111 9.1748C9.66041 8.69554 10.1172 8.39918 10.7563 8.15039C11.2391 7.96207 11.964 7.73909 13.2993 7.67773C14.5627 7.62067 15.0525 7.60344 17.6049 7.60059V7.60449ZM18.8335 11.7988C14.9493 11.7991 11.8002 14.9486 11.8002 18.833C11.8003 22.7173 14.9493 25.865 18.8335 25.8652C22.7178 25.8652 25.8666 22.7175 25.8667 18.833C25.8667 14.9485 22.7179 11.7988 18.8335 11.7988ZM18.8335 14.2676C21.3548 14.2676 23.3999 16.3113 23.3999 18.833C23.3998 21.3543 21.3547 23.3984 18.8335 23.3984C16.3121 23.3982 14.2681 21.3542 14.268 18.833C14.268 16.3115 16.3121 14.2678 18.8335 14.2676ZM26.145 9.87891C25.2376 9.87893 24.5015 10.6138 24.5014 11.5215C24.5014 12.4289 25.2376 13.165 26.145 13.165C27.0524 13.165 27.7885 12.4289 27.7885 11.5215C27.7885 10.6141 27.0523 9.87793 26.145 9.87793V9.87891Z"
+									fill="#828282"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_2002_19460">
+									<rect width="37.6667" height="37.6667" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+					<a href="#" target="_blank">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="38"
+							height="38"
+							viewBox="0 0 38 38"
+							fill="none"
+						>
+							<g clip-path="url(#clip0_2002_19476)">
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M4.51853 37.6667H33.8148C36.1262 37.6667 38 35.7929 38 33.4815V4.18519C38 1.87377 36.1262 0 33.8148 0H4.51853C2.20711 0 0.333344 1.87377 0.333344 4.18519V33.4815C0.333344 35.7929 2.20711 37.6667 4.51853 37.6667ZM32.7685 32.4351H27.179V22.9149C27.179 20.3047 26.1872 18.846 24.1212 18.846C21.8738 18.846 20.6995 20.364 20.6995 22.9149V32.4351H15.3128V14.2993H20.6995V16.7421C20.6995 16.7421 22.3192 13.7452 26.1677 13.7452C30.0145 13.7452 32.7685 16.0942 32.7685 20.9526V32.4351ZM8.88646 11.9245C7.05163 11.9245 5.56481 10.426 5.56481 8.57794C5.56481 6.72984 7.05163 5.23135 8.88646 5.23135C10.7213 5.23135 12.2072 6.72984 12.2072 8.57794C12.2072 10.426 10.7213 11.9245 8.88646 11.9245ZM6.10499 32.4351H11.722V14.2993H6.10499V32.4351Z"
+									fill="#828282"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_2002_19476">
+									<rect
+										width="37.6667"
+										height="37.6667"
+										fill="white"
+										transform="translate(0.333344)"
+									/>
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<main>
+			<div class="bg-primary hero relative overflow-hidden">
+				<div
+					class="content_container mt-9 sm:mt-32 ll:mt-0 flex flex-col items-start w-full h-full justify-center relative z-10"
+				>
+					<h1
+						class="sm:max-w-[45rem] max-w-full ll:mx-0 mx-auto text-3xl s:text-4xl sm:text-5xl xl:text-7xl 2xl:text-8xl relative font-medium text-white mb-8 sm:mb-16"
+					>
+						<p class="w-full block text-white ll:text-right">NumaPay:</p>
+						<p>the last refuge of</p>
+						<div
+							class="flex sm:flex-row flex-col sm:items-center gap-4 sm:gap-12"
+						>
+							<p class="sm:text-left text-right">freedom</p>
+							<p class="s:text-lg text-base text-mainYellow">
+								No KYC and no KYB cryptoprocessing
+							</p>
+						</div>
+					</h1>
+					<button
+						class="primary_btn ll:mx-0 sm:w-[12.5rem] mx-auto ll:mb-0 md:mb-10"
+					>
+						Speak an expert
+					</button>
+					<div
+						class="ll:absolute relative sm:-bottom-24 md:bottom-0 md:mt-0 sm:-mt-28 right-0 mx-auto xl:-right-2 2xl:-right-28 z-10"
+					>
+						<img
+							class="relative mx-auto max-w-[15.625rem] sm:max-w-max z-20"
+							src="./assets/hero/iphone.png"
+							alt="phone"
+						/>
+						<img
+							src="./assets/hero/tron.svg"
+							alt="tron"
+							class="absolute w-10 h-10 sm:w-20 sm:h-20 top-8 sm:top-6 left-0 sm:left-6 z-10"
+							id="coin_1"
+						/>
+						<img
+							src="./assets/hero/bitcoin.svg"
+							alt="bitcoin"
+							class="absolute w-[3.75rem] h-[3.75rem] sm:w-[6.438rem] sm:h-[6.438rem] top-12 sm:top-44 left-10 sm:left-36 z-20"
+							id="coin_2"
+						/>
+						<img
+							src="./assets/hero/eth.svg"
+							alt="eth"
+							class="absolute sm:w-[8.188rem] w-[5.25rem] h-[5.25rem] sm:h-[8.188rem] sm:top-80 top-36 sm:left-5 left-0 z-30"
+							id="coin_3"
+						/>
+						<img
+							src="./assets/hero/dollar.svg"
+							alt="dollar"
+							class="absolute top-28 sm:top-64 sm:w-[4.25rem] sm:h-[4.25rem] w-10 h-10 right-0 sm:-right-10 z-30"
+							id="coin_4"
+						/>
+						<img
+							src="./assets/hero/tether.svg"
+							alt="tether"
+							class="absolute bottom-0 sm:right-10 z-10 sm:w-[12.125rem] sm:h-[12.125rem] w-[7.5rem] h-[7.5rem] sm:bottom-0 -right-10"
+							id="coin_5"
+						/>
+						<div class="svg-container">
+							<svg
+								class="line line-1 absolute bottom-0 sm:bottom-60 sm:scale-[1] scale-[0.4] sm:-right-20 -right-60 z-20"
+								xmlns="http://www.w3.org/2000/svg"
+								width="730"
+								height="266"
+								viewBox="0 0 730 266"
+								fill="none"
+							>
+								<path
+									class="line-path"
+									d="M230.863 93.5411C88.1901 146.484 -8.5774 206.307 1.43476 240.207C13.8797 282.345 186.588 268.478 387.189 209.233C587.79 149.988 740.321 67.8004 727.876 25.6623C721.513 4.11762 673.255 -2.78629 600.794 3.5299"
+									stroke="url(#paint0_linear_2228_734)"
+									stroke-width="1.4"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2228_734"
+										x1="34"
+										y1="112.248"
+										x2="369.355"
+										y2="319.041"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#1C1C1C" />
+										<stop
+											class="gradient-stop"
+											offset="0.39423"
+											stop-color="#B3B34A"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="white"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.725961"
+											stop-color="#E3E35B"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#1C1C1C"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
 
-              <svg
-                class="line line-2 absolute sm:bottom-48 -bottom-8 -right-60 sm:-right-20 z-20 sm:scale-[1] scale-[0.4]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="731"
-                height="266"
-                viewBox="0 0 731 266"
-                fill="none"
-              >
-                <path
-                  class="line-path"
-                  d="M195.958 107.072C73.1946 156.319 -6.84869 208.956 2.30194 239.939C14.7469 282.077 187.455 268.21 388.056 208.965C588.657 149.72 741.188 67.5323 728.743 25.3942C721.448 0.693704 659.086 -4.76278 568.317 6.88391"
-                  stroke="url(#paint0_linear_2228_733)"
-                  stroke-width="1.4"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2228_733"
-                    x1="-11"
-                    y1="288.248"
-                    x2="644.988"
-                    y2="236.475"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#1C1C1C" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.39423"
-                      stop-color="#B3B34A"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="white"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.725961"
-                      stop-color="#E3E35B"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#1C1C1C"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+							<svg
+								class="line line-2 absolute sm:bottom-48 -bottom-8 -right-60 sm:-right-20 z-20 sm:scale-[1] scale-[0.4]"
+								xmlns="http://www.w3.org/2000/svg"
+								width="731"
+								height="266"
+								viewBox="0 0 731 266"
+								fill="none"
+							>
+								<path
+									class="line-path"
+									d="M195.958 107.072C73.1946 156.319 -6.84869 208.956 2.30194 239.939C14.7469 282.077 187.455 268.21 388.056 208.965C588.657 149.72 741.188 67.5323 728.743 25.3942C721.448 0.693704 659.086 -4.76278 568.317 6.88391"
+									stroke="url(#paint0_linear_2228_733)"
+									stroke-width="1.4"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2228_733"
+										x1="-11"
+										y1="288.248"
+										x2="644.988"
+										y2="236.475"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#1C1C1C" />
+										<stop
+											class="gradient-stop"
+											offset="0.39423"
+											stop-color="#B3B34A"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="white"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.725961"
+											stop-color="#E3E35B"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#1C1C1C"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
 
-              <svg
-                class="line line-3 absolute sm:bottom-36 sm:scale-[1] scale-[0.4] -bottom-16 -right-60 sm:-right-20 z-20"
-                xmlns="http://www.w3.org/2000/svg"
-                width="731"
-                height="265"
-                viewBox="0 0 731 265"
-                fill="none"
-              >
-                <path
-                  class="line-path"
-                  d="M158.79 122.326C57.3076 166.816 -6.02281 211.924 2.17148 239.67C14.6164 281.808 187.324 267.94 387.926 208.695C588.527 149.45 741.057 67.2628 728.612 25.1247C720.455 -2.49654 643.437 -6.05362 534.84 11.4599"
-                  stroke="url(#paint0_linear_2228_732)"
-                  stroke-width="1.4"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2228_732"
-                    x1="186"
-                    y1="119.248"
-                    x2="368.782"
-                    y2="341.021"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#1C1C1C" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.39423"
-                      stop-color="#B3B34A"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="white"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.725961"
-                      stop-color="#E3E35B"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#1C1C1C"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section id="about">
-        <div class="content_container">
-          <div
-            class="flex items-center px-3 gap-2 text-sm font-semibold bg-half w-[6.625rem] tracking-[0.158rem] rounded-[6.25rem] h-[2.313rem] mb-10"
-          >
-            <div
-              class="bg-mainYellow w-2 h-2 flex-shrink-0 rounded-[50%]"
-            ></div>
-            ABOUT
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-            <div class="about_item">
-              <p class="max-w-[15rem]">eCommerce-ready crypto invoices</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/eCommerce.svg"
-                alt="eCommerce"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">
-                Static crypto addresses for your customers
-              </p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Crypto_addresses.svg"
-                alt="Crypto_addresses"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">Auto cryptocurrency conversion</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Cryptocurrency_conversion.svg"
-                alt="Cryptocurrency_conversion"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">
-                Simple API integration into your product
-              </p>
-              <img class="flex-shrink-0" src="./assets/about/AI.svg" alt="AI" />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">
-                Team management with role-based access
-              </p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Team_management.svg"
-                alt="Team_management"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">Proprietary nodes</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Proprietary_nodes.svg"
-                alt="Team_management"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">Crypto payouts</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Crypto_payouts.svg"
-                alt="Crypto_payouts"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">Unlimited merchants</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Unlimited_merchants.svg"
-                alt="Unlimited_merchants"
-              />
-            </div>
-            <div class="about_item">
-              <p class="max-w-[15rem]">Crypto invoices for your business</p>
-              <img
-                class="flex-shrink-0"
-                src="./assets/about/Crypto_invoices.svg"
-                alt="Crypto_invoices"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bg-primary">
-        <div class="content_container">
-          <div
-            class="flex lg:flex-row flex-col items-start gap-6 sm:gap-10 justify-between font-medium"
-          >
-            <h3
-              class="sm:text-4xl text-3x xl:text-5xl text-white max-w-[46.063rem]"
-            >
-              Get your direct access to the $2.8+ trillion crypto market
-            </h3>
-            <p class="text-xl text-mainYellow">Follow these 4 easy steps:</p>
-          </div>
-          <div
-            class="relative lg:block lg:mt-0 mt-8 sm:mt-10 grid md:grid-cols-2 justify-items-center md:gap-5 lg:h-[43.75rem] max-h-[62.5rem] s:max-h-[80rem] md:max-h-full xl:h-[59.375rem] mb-0 md:mb-20 lg:mb-[3.125rem]"
-          >
-            <div
-              class="absolute xl:top-[21.875rem] lg:block hidden top-[9.75rem] left-[14.813rem] xl:left-[19.75rem] p-10 rounded-[50%] bg-codGray"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="99"
-                height="99"
-                viewBox="0 0 99 99"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M33.5341 49.0914C38.2058 49.0914 42.028 52.9136 42.028 57.5853H49.7039C49.7039 48.692 42.4274 41.4155 33.5341 41.4155C24.6407 41.4155 17.3643 48.692 17.3643 57.5853H25.0401C25.0401 52.9136 28.8623 49.0914 33.5341 49.0914Z"
-                  fill="#FFFF66"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M65.4668 49.9087C60.7951 49.9087 56.9729 46.0865 56.9729 41.4148H49.2971C49.2971 50.3081 56.5735 57.5846 65.4668 57.5846C74.3602 57.5846 81.6366 50.3081 81.6366 41.4148H73.9608C73.9608 46.0865 70.1386 49.9087 65.4668 49.9087Z"
-                  fill="#FFFF66"
-                />
-                <path
-                  d="M49.5 0C63.1693 0 75.5436 5.54058 84.5015 14.4985C93.4594 23.4564 99 35.8316 99 49.5C99 63.1684 93.4594 75.5436 84.5015 84.5015C75.5436 93.4594 63.1684 99 49.5 99C35.8316 99 23.4564 93.4594 14.4985 84.5015C5.54059 75.5436 0 63.1684 0 49.5C0 35.8316 5.54059 23.4564 14.4985 14.4985C23.4564 5.54058 35.8316 0 49.5 0ZM79.0993 19.9007C71.524 12.3264 61.0599 7.64077 49.5 7.64077C37.9411 7.64077 27.476 12.3264 19.9007 19.9007C12.3254 27.476 7.64078 37.9401 7.64078 49.5C7.64078 61.059 12.3263 71.524 19.9007 79.0993C27.476 86.6746 37.9401 91.3592 49.5 91.3592C61.0599 91.3592 71.524 86.6737 79.0993 79.0993C86.6746 71.5249 91.3592 61.0599 91.3592 49.5C91.3592 37.9401 86.6737 27.476 79.0993 19.9007Z"
-                  fill="#FFFF66"
-                />
-              </svg>
-            </div>
+							<svg
+								class="line line-3 absolute sm:bottom-36 sm:scale-[1] scale-[0.4] -bottom-16 -right-60 sm:-right-20 z-20"
+								xmlns="http://www.w3.org/2000/svg"
+								width="731"
+								height="265"
+								viewBox="0 0 731 265"
+								fill="none"
+							>
+								<path
+									class="line-path"
+									d="M158.79 122.326C57.3076 166.816 -6.02281 211.924 2.17148 239.67C14.6164 281.808 187.324 267.94 387.926 208.695C588.527 149.45 741.057 67.2628 728.612 25.1247C720.455 -2.49654 643.437 -6.05362 534.84 11.4599"
+									stroke="url(#paint0_linear_2228_732)"
+									stroke-width="1.4"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2228_732"
+										x1="186"
+										y1="119.248"
+										x2="368.782"
+										y2="341.021"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#1C1C1C" />
+										<stop
+											class="gradient-stop"
+											offset="0.39423"
+											stop-color="#B3B34A"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="white"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.725961"
+											stop-color="#E3E35B"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#1C1C1C"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section id="about">
+				<div class="content_container">
+					<div
+						class="flex items-center px-3 gap-2 text-sm font-semibold bg-half w-[6.625rem] tracking-[0.158rem] rounded-[6.25rem] h-[2.313rem] mb-10"
+					>
+						<div
+							class="bg-mainYellow w-2 h-2 flex-shrink-0 rounded-[50%]"
+						></div>
+						ABOUT
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+						<div class="about_item">
+							<p class="max-w-[15rem]">eCommerce-ready crypto invoices</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/eCommerce.svg"
+								alt="eCommerce"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">
+								Static crypto addresses for your customers
+							</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Crypto_addresses.svg"
+								alt="Crypto_addresses"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">Auto cryptocurrency conversion</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Cryptocurrency_conversion.svg"
+								alt="Cryptocurrency_conversion"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">
+								Simple API integration into your product
+							</p>
+							<img class="flex-shrink-0" src="./assets/about/AI.svg" alt="AI" />
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">
+								Team management with role-based access
+							</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Team_management.svg"
+								alt="Team_management"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">Proprietary nodes</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Proprietary_nodes.svg"
+								alt="Team_management"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">Crypto payouts</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Crypto_payouts.svg"
+								alt="Crypto_payouts"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">Unlimited merchants</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Unlimited_merchants.svg"
+								alt="Unlimited_merchants"
+							/>
+						</div>
+						<div class="about_item">
+							<p class="max-w-[15rem]">Crypto invoices for your business</p>
+							<img
+								class="flex-shrink-0"
+								src="./assets/about/Crypto_invoices.svg"
+								alt="Crypto_invoices"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-primary">
+				<div class="content_container">
+					<div
+						class="flex lg:flex-row flex-col items-start gap-6 sm:gap-10 justify-between font-medium"
+					>
+						<h3
+							class="sm:text-4xl text-3x xl:text-5xl text-white max-w-[46.063rem]"
+						>
+							Get your direct access to the $2.8+ trillion crypto market
+						</h3>
+						<p class="text-xl text-mainYellow">Follow these 4 easy steps:</p>
+					</div>
+					<div
+						class="relative lg:block lg:mt-0 mt-8 sm:mt-10 grid md:grid-cols-2 justify-items-center md:gap-5 lg:h-[43.75rem] max-h-[62.5rem] s:max-h-[80rem] md:max-h-full xl:h-[59.375rem] mb-0 md:mb-20 lg:mb-[3.125rem]"
+					>
+						<div
+							class="absolute xl:top-[21.875rem] lg:block hidden top-[9.75rem] left-[14.813rem] xl:left-[19.75rem] p-10 rounded-[50%] bg-codGray"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="99"
+								height="99"
+								viewBox="0 0 99 99"
+								fill="none"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M33.5341 49.0914C38.2058 49.0914 42.028 52.9136 42.028 57.5853H49.7039C49.7039 48.692 42.4274 41.4155 33.5341 41.4155C24.6407 41.4155 17.3643 48.692 17.3643 57.5853H25.0401C25.0401 52.9136 28.8623 49.0914 33.5341 49.0914Z"
+									fill="#FFFF66"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M65.4668 49.9087C60.7951 49.9087 56.9729 46.0865 56.9729 41.4148H49.2971C49.2971 50.3081 56.5735 57.5846 65.4668 57.5846C74.3602 57.5846 81.6366 50.3081 81.6366 41.4148H73.9608C73.9608 46.0865 70.1386 49.9087 65.4668 49.9087Z"
+									fill="#FFFF66"
+								/>
+								<path
+									d="M49.5 0C63.1693 0 75.5436 5.54058 84.5015 14.4985C93.4594 23.4564 99 35.8316 99 49.5C99 63.1684 93.4594 75.5436 84.5015 84.5015C75.5436 93.4594 63.1684 99 49.5 99C35.8316 99 23.4564 93.4594 14.4985 84.5015C5.54059 75.5436 0 63.1684 0 49.5C0 35.8316 5.54059 23.4564 14.4985 14.4985C23.4564 5.54058 35.8316 0 49.5 0ZM79.0993 19.9007C71.524 12.3264 61.0599 7.64077 49.5 7.64077C37.9411 7.64077 27.476 12.3264 19.9007 19.9007C12.3254 27.476 7.64078 37.9401 7.64078 49.5C7.64078 61.059 12.3263 71.524 19.9007 79.0993C27.476 86.6746 37.9401 91.3592 49.5 91.3592C61.0599 91.3592 71.524 86.6737 79.0993 79.0993C86.6746 71.5249 91.3592 61.0599 91.3592 49.5C91.3592 37.9401 86.6737 27.476 79.0993 19.9007Z"
+									fill="#FFFF66"
+								/>
+							</svg>
+						</div>
 
-            <svg
-              class="absolute hidden xl:block top-[23.125rem] left-[30.875rem]"
-              xmlns="http://www.w3.org/2000/svg"
-              width="85"
-              height="85"
-              viewBox="0 0 85 85"
-              fill="none"
-            >
-              <circle cx="42.5" cy="42.5" r="42" stroke="#3C3C3C" />
-            </svg>
+						<svg
+							class="absolute hidden xl:block top-[23.125rem] left-[30.875rem]"
+							xmlns="http://www.w3.org/2000/svg"
+							width="85"
+							height="85"
+							viewBox="0 0 85 85"
+							fill="none"
+						>
+							<circle cx="42.5" cy="42.5" r="42" stroke="#3C3C3C" />
+						</svg>
 
-            <div
-              class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute top-0 md:top-8 left-0 lg:-top-[0.313rem] xl:top-[5.938rem] lg:left-[30.5rem] xl:left-[38.125rem] rounded-[50%] border border-mineShaft z-[12]"
-            >
-              <div class="yellow_round">01</div>
+						<div
+							class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute top-0 md:top-8 left-0 lg:-top-[0.313rem] xl:top-[5.938rem] lg:left-[30.5rem] xl:left-[38.125rem] rounded-[50%] border border-mineShaft z-[12]"
+						>
+							<div class="yellow_round">01</div>
 
-              <p
-                class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center s:max-w-[12.5rem] xl:max-w-[16.063rem] mx-auto"
-              >
-                Register & Create a Project
-              </p>
-            </div>
+							<p
+								class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center s:max-w-[12.5rem] xl:max-w-[16.063rem] mx-auto"
+							>
+								Register & Create a Project
+							</p>
+						</div>
 
-            <svg
-              class="absolute top-[12.5rem] left-[63.125rem] hidden xl:block"
-              xmlns="http://www.w3.org/2000/svg"
-              width="85"
-              height="85"
-              viewBox="0 0 85 85"
-              fill="none"
-            >
-              <circle cx="42.5" cy="42.5" r="42" stroke="#3C3C3C" />
-            </svg>
+						<svg
+							class="absolute top-[12.5rem] left-[63.125rem] hidden xl:block"
+							xmlns="http://www.w3.org/2000/svg"
+							width="85"
+							height="85"
+							viewBox="0 0 85 85"
+							fill="none"
+						>
+							<circle cx="42.5" cy="42.5" r="42" stroke="#3C3C3C" />
+						</svg>
 
-            <svg
-              class="absolute top-[17.188rem] left-[63.125rem] hidden xl:block"
-              xmlns="http://www.w3.org/2000/svg"
-              width="181"
-              height="181"
-              viewBox="0 0 181 181"
-              fill="none"
-            >
-              <circle cx="90.5" cy="90.5" r="90" stroke="#3C3C3C" />
-            </svg>
+						<svg
+							class="absolute top-[17.188rem] left-[63.125rem] hidden xl:block"
+							xmlns="http://www.w3.org/2000/svg"
+							width="181"
+							height="181"
+							viewBox="0 0 181 181"
+							fill="none"
+						>
+							<circle cx="90.5" cy="90.5" r="90" stroke="#3C3C3C" />
+						</svg>
 
-            <div
-              class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute bottom-24 md:bottom-0 lg:bottom-32 left-0 rounded-[50%] border border-mineShaft z-[12] md:bg-transparent bg-primary"
-            >
-              <div class="yellow_round">02</div>
+						<div
+							class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute bottom-24 md:bottom-0 lg:bottom-32 left-0 rounded-[50%] border border-mineShaft z-[12] md:bg-transparent bg-primary"
+						>
+							<div class="yellow_round">02</div>
 
-              <p
-                class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center max-w-[16.063rem] mx-auto"
-              >
-                Get API key
-              </p>
-            </div>
+							<p
+								class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center max-w-[16.063rem] mx-auto"
+							>
+								Get API key
+							</p>
+						</div>
 
-            <div
-              class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute bottom-[58%] lg:bottom-24 left-0 md:left-[29.75rem] lg:left-[20.375rem] xl:left-[25.375rem] rounded-[50%] border border-mineShaft z-[13] md:bg-transparent bg-primary"
-            >
-              <div class="yellow_round">03</div>
-              <p
-                class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center max-w-[18.125rem] s:max-w-[15.625rem] xl:max-w-[18.563rem] mx-auto"
-              >
-                Integrate NumoPay into your payform
-              </p>
-            </div>
+						<div
+							class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] md:static relative lg:absolute bottom-[58%] lg:bottom-24 left-0 md:left-[29.75rem] lg:left-[20.375rem] xl:left-[25.375rem] rounded-[50%] border border-mineShaft z-[13] md:bg-transparent bg-primary"
+						>
+							<div class="yellow_round">03</div>
+							<p
+								class="text-lg s:text-xx xl:text-3xx font-medium text-white text-center max-w-[18.125rem] s:max-w-[15.625rem] xl:max-w-[18.563rem] mx-auto"
+							>
+								Integrate NumoPay into your payform
+							</p>
+						</div>
 
-            <div
-              class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] bg-mainYellow md:static relative lg:absolute bottom-[85%] md:bottom-0 lg:bottom-24 left-0 md:left-[29.75rem] lg:left-[40.938rem] xl:left-[50.938rem] rounded-[50%] z-[14]"
-            >
-              <div
-                class="w-16 h-16 rounded-[50%] flex items-center justify-center text-3xx font-medium border border-primary shadow-default bg-white"
-              >
-                04
-              </div>
+						<div
+							class="xl:w-[25.375rem] md:w-[20.375rem] sm:w-[23.875rem] w-[18.875rem] pt-12 flex flex-col gap-8 s:gap-14 md:gap-20 items-center xl:h-[25.375rem] md:h-[20.375rem] sm:h-[23.875rem] h-[18.875rem] bg-mainYellow md:static relative lg:absolute bottom-[85%] md:bottom-0 lg:bottom-24 left-0 md:left-[29.75rem] lg:left-[40.938rem] xl:left-[50.938rem] rounded-[50%] z-[14]"
+						>
+							<div
+								class="w-16 h-16 rounded-[50%] flex items-center justify-center text-3xx font-medium border border-primary shadow-default bg-white"
+							>
+								04
+							</div>
 
-              <p
-                class="text-lg s:text-xx xl:text-3xx font-medium text-center max-w-[18.125rem] s:max-w-[16.25rem] xl:max-w-[22.438rem] mx-auto"
-              >
-                Accept and withdraw crypto seamlessly
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col l:flex-row gap-6 l:items-center justify-between font-medium mb-14"
-          >
-            <h4 class="lg:text-4xl text-3x text-white">
-              Supported cryptocurrencies
-            </h4>
-            <p
-              class="l:max-w-[25.625rem] text-xl l:text-lg text-white l:text-mainYellow"
-            >
-              Lightning-fast and secure transactions powered by our own
-              proprietary nodes:
-            </p>
-          </div>
-          <div
-            class="flex items-center sm:justify-between crypto_gap flex-wrap xl:flex-nowrap"
-          >
-            <div class="crypto_item">
-              <img src="./assets/crypto/bitcoin.svg" alt="bitcoin" />
-              <p>Bitcoin</p>
-            </div>
-            <div class="crypto_item">
-              <img src="./assets/crypto/usdt.svg" alt="usdt" />
-              <p>USD Coin</p>
-            </div>
-            <div class="crypto_item">
-              <img src="./assets/crypto/tether.svg" alt="tether" />
-              <p>Tether USD</p>
-            </div>
-            <div class="crypto_item">
-              <img src="./assets/crypto/tron.svg" alt="tron" />
-              <p>TRON</p>
-            </div>
-            <div class="crypto_item">
-              <img src="./assets/crypto/eth.svg" alt="eth" />
-              <p>Ethereum</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bg-alabaster" id="business">
-        <div class="content_container">
-          <div
-            class="flex items-center px-3 gap-2 text-sm font-semibold bg-white w-[8.625rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-10"
-          >
-            <div
-              class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
-            ></div>
-            BUSINESS
-          </div>
-        </div>
-        <div class="slider-wrapper">
-          <div class="slider-track">
-            <img class="business-img" src="./assets/business/1.png" alt="1" />
-            <img class="business-img" src="./assets/business/2.png" alt="2" />
-            <img class="business-img" src="./assets/business/3.png" alt="3" />
-            <img class="business-img" src="./assets/business/4.png" alt="4" />
-            <img class="business-img" src="./assets/business/5.png" alt="5" />
-            <img class="business-img" src="./assets/business/6.png" alt="6" />
-            <img class="business-img" src="./assets/business/7.png" alt="7" />
-            <img class="business-img" src="./assets/business/1.png" alt="1" />
-            <img class="business-img" src="./assets/business/2.png" alt="2" />
-            <img class="business-img" src="./assets/business/3.png" alt="3" />
-            <img class="business-img" src="./assets/business/4.png" alt="4" />
-            <img class="business-img" src="./assets/business/5.png" alt="5" />
-            <img class="business-img" src="./assets/business/6.png" alt="6" />
-            <img class="business-img" src="./assets/business/7.png" alt="7" />
-          </div>
-        </div>
-      </section>
-      <section class="merchants bg-primary relative" id="merchants">
-        <div class="content_container relative z-10">
-          <div
-            class="flex items-center bg-codGray mb-10 tracking-[0.158rem] text-sm font-semibold text-mainYellow rounded-[6.25rem] py-2 px-3 gap-2 w-[9.375rem] h-[2.313rem]"
-          >
-            <div
-              class="bg-mainYellow flex-shrink-0 w-2 h-2 rounded-[50%]"
-            ></div>
-            <p>MERCHANTS</p>
-          </div>
-          <div class="grid l:grid-cols-2 gap-6">
-            <div
-              class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10 l:col-span-2"
-            >
-              <h4
-                class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-12"
-              >
-                Scale freely with unlimited merchants
-              </h4>
-              <img src="./assets/merchants/1.png" alt="scale freely" />
-            </div>
-            <div class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10">
-              <h4
-                class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-8"
-              >
-                Granular team management to protect your finances
-              </h4>
-              <img src="./assets/merchants/2.png" alt="Granular team " />
-            </div>
-            <div class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10">
-              <h4
-                class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-8"
-              >
-                Dedicated wallet per merchant for maximum control
-              </h4>
-              <img
-                src="./assets/merchants/3.png"
-                alt="Dedicated wallet per merchant"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="rates">
-        <div class="content_container">
-          <div
-            class="bg-primary rounded-3xx sm:rounded-4xl overflow-hidden flex gap-14 lg:gap-16 xx:gap-32 lg:flex-row flex-col justify-between items-stretch rates_content relative lg:px-20 sm:px-10 px-6 sm:py-10 py-6 lg:py-[4.375rem]"
-          >
-            <div class="relative z-10">
-              <div
-                class="flex items-center bg-codGray mb-6 text-sm font-semibold tracking-[0.158rem] text-mainYellow rounded-[6.25rem] py-2 px-3 gap-2 w-[6.125rem] h-[2.313rem]"
-              >
-                <div
-                  class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
-                ></div>
-                <p>RATES</p>
-              </div>
-              <h4
-                class="text-3xl s:text-4xl sm:text-5xl xx:text-8xl font-medium text-white mb-2"
-              >
-                From <span class="text-mainYellow"> 0% to 1%</span>
-              </h4>
-              <p
-                class="font-medium sm:text-3xx text-xl text-white mb-8 sm:mb-12"
-              >
-                Depending on your needs
-              </p>
-              <button class="primary_btn">Get a quote</button>
-            </div>
-            <div
-              class="sm:p-10 p-6 bg-codGray rounded-4xl grid gap-8 relative z-10"
-            >
-              <div
-                class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
-              >
-                <div
-                  class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="21"
-                    viewBox="0 0 25 21"
-                    fill="none"
-                  >
-                    <path
-                      d="M2 11.5L8 18L23 2"
-                      stroke="black"
-                      stroke-width="4"
-                    />
-                  </svg>
-                </div>
+							<p
+								class="text-lg s:text-xx xl:text-3xx font-medium text-center max-w-[18.125rem] s:max-w-[16.25rem] xl:max-w-[22.438rem] mx-auto"
+							>
+								Accept and withdraw crypto seamlessly
+							</p>
+						</div>
+					</div>
+					<div
+						class="flex flex-col l:flex-row gap-6 l:items-center justify-between font-medium mb-14"
+					>
+						<h4 class="lg:text-4xl text-3x text-white">
+							Supported cryptocurrencies
+						</h4>
+						<p
+							class="l:max-w-[25.625rem] text-xl l:text-lg text-white l:text-mainYellow"
+						>
+							Lightning-fast and secure transactions powered by our own
+							proprietary nodes:
+						</p>
+					</div>
+					<div
+						class="flex items-center sm:justify-between crypto_gap flex-wrap xl:flex-nowrap"
+					>
+						<div class="crypto_item">
+							<img src="./assets/crypto/bitcoin.svg" alt="bitcoin" />
+							<p>Bitcoin</p>
+						</div>
+						<div class="crypto_item">
+							<img src="./assets/crypto/usdt.svg" alt="usdt" />
+							<p>USD Coin</p>
+						</div>
+						<div class="crypto_item">
+							<img src="./assets/crypto/tether.svg" alt="tether" />
+							<p>Tether USD</p>
+						</div>
+						<div class="crypto_item">
+							<img src="./assets/crypto/tron.svg" alt="tron" />
+							<p>TRON</p>
+						</div>
+						<div class="crypto_item">
+							<img src="./assets/crypto/eth.svg" alt="eth" />
+							<p>Ethereum</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-alabaster" id="business">
+				<div class="content_container">
+					<div
+						class="flex items-center px-3 gap-2 text-sm font-semibold bg-white w-[8.625rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-10"
+					>
+						<div
+							class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
+						></div>
+						BUSINESS
+					</div>
+				</div>
+				<div class="slider-wrapper">
+					<div class="slider-track">
+						<img class="business-img" src="./assets/business/1.png" alt="1" />
+						<img class="business-img" src="./assets/business/2.png" alt="2" />
+						<img class="business-img" src="./assets/business/3.png" alt="3" />
+						<img class="business-img" src="./assets/business/4.png" alt="4" />
+						<img class="business-img" src="./assets/business/5.png" alt="5" />
+						<img class="business-img" src="./assets/business/6.png" alt="6" />
+						<img class="business-img" src="./assets/business/7.png" alt="7" />
+						<img class="business-img" src="./assets/business/1.png" alt="1" />
+						<img class="business-img" src="./assets/business/2.png" alt="2" />
+						<img class="business-img" src="./assets/business/3.png" alt="3" />
+						<img class="business-img" src="./assets/business/4.png" alt="4" />
+						<img class="business-img" src="./assets/business/5.png" alt="5" />
+						<img class="business-img" src="./assets/business/6.png" alt="6" />
+						<img class="business-img" src="./assets/business/7.png" alt="7" />
+					</div>
+				</div>
+			</section>
+			<section class="merchants bg-primary relative" id="merchants">
+				<div class="content_container relative z-10">
+					<div
+						class="flex items-center bg-codGray mb-10 tracking-[0.158rem] text-sm font-semibold text-mainYellow rounded-[6.25rem] py-2 px-3 gap-2 w-[9.375rem] h-[2.313rem]"
+					>
+						<div
+							class="bg-mainYellow flex-shrink-0 w-2 h-2 rounded-[50%]"
+						></div>
+						<p>MERCHANTS</p>
+					</div>
+					<div class="grid l:grid-cols-2 gap-6">
+						<div
+							class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10 l:col-span-2"
+						>
+							<h4
+								class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-12"
+							>
+								Scale freely with unlimited merchants
+							</h4>
+							<img src="./assets/merchants/1.png" alt="scale freely" />
+						</div>
+						<div class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10">
+							<h4
+								class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-8"
+							>
+								Granular team management to protect your finances
+							</h4>
+							<img src="./assets/merchants/2.png" alt="Granular team " />
+						</div>
+						<div class="bg-white rounded-3xx sm:rounded-4xl p-6 sm:p-10">
+							<h4
+								class="text-xl sm:text-3xx font-medium pb-6 border-b border-b-primary mb-6 sm:mb-8"
+							>
+								Dedicated wallet per merchant for maximum control
+							</h4>
+							<img
+								src="./assets/merchants/3.png"
+								alt="Dedicated wallet per merchant"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="rates">
+				<div class="content_container">
+					<div
+						class="bg-primary rounded-3xx sm:rounded-4xl overflow-hidden flex gap-14 lg:gap-16 xx:gap-32 lg:flex-row flex-col justify-between items-stretch rates_content relative lg:px-20 sm:px-10 px-6 sm:py-10 py-6 lg:py-[4.375rem]"
+					>
+						<div class="relative z-10">
+							<div
+								class="flex items-center bg-codGray mb-6 text-sm font-semibold tracking-[0.158rem] text-mainYellow rounded-[6.25rem] py-2 px-3 gap-2 w-[6.125rem] h-[2.313rem]"
+							>
+								<div
+									class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
+								></div>
+								<p>RATES</p>
+							</div>
+							<h4
+								class="text-3xl s:text-4xl sm:text-5xl xx:text-8xl font-medium text-white mb-2"
+							>
+								From <span class="text-mainYellow"> 0% to 1%</span>
+							</h4>
+							<p
+								class="font-medium sm:text-3xx text-xl text-white mb-8 sm:mb-12"
+							>
+								Depending on your needs
+							</p>
+							<button class="primary_btn">Get a quote</button>
+						</div>
+						<div
+							class="sm:p-10 p-6 bg-codGray rounded-4xl grid gap-8 relative z-10"
+						>
+							<div
+								class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
+							>
+								<div
+									class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="25"
+										height="21"
+										viewBox="0 0 25 21"
+										fill="none"
+									>
+										<path
+											d="M2 11.5L8 18L23 2"
+											stroke="black"
+											stroke-width="4"
+										/>
+									</svg>
+								</div>
 
-                <p>No setup fee</p>
-              </div>
-              <div
-                class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
-              >
-                <div
-                  class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="21"
-                    viewBox="0 0 25 21"
-                    fill="none"
-                  >
-                    <path
-                      d="M2 11.5L8 18L23 2"
-                      stroke="black"
-                      stroke-width="4"
-                    />
-                  </svg>
-                </div>
-                <p>No monthly fee</p>
-              </div>
-              <div
-                class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
-              >
-                <div
-                  class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="21"
-                    viewBox="0 0 25 21"
-                    fill="none"
-                  >
-                    <path
-                      d="M2 11.5L8 18L23 2"
-                      stroke="black"
-                      stroke-width="4"
-                    />
-                  </svg>
-                </div>
-                <p>Free integration support</p>
-              </div>
-            </div>
-            <svg
-              class="absolute sm:block hidden bottom-0 right-0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="901"
-              height="218"
-              viewBox="0 0 901 218"
-              fill="none"
-            >
-              <path
-                d="M683.972 0.700195C684.353 81.3727 750.586 147.25 831.492 147.25C912.398 147.25 978.631 81.3727 979.013 0.700195L1110.3 0.700195C1109.92 153.435 984.601 278.284 831.492 278.284C678.383 278.284 553.068 153.435 552.687 0.700195L683.972 0.700195ZM279.508 0.714844C432.617 0.714844 557.932 125.565 558.313 278.3L427.028 278.3C426.647 197.627 360.414 131.75 279.508 131.75C198.602 131.75 132.369 197.627 131.987 278.3H0.702148C1.0841 125.565 126.399 0.714927 279.508 0.714844Z"
-                stroke="url(#paint0_linear_2057_3728)"
-                stroke-width="1.4"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2057_3728"
-                  x1="122.739"
-                  y1="-44.3863"
-                  x2="767.397"
-                  y2="392.174"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#0A0A0A" />
-                  <stop offset="0.39423" stop-color="#B3B34A" />
-                  <stop offset="0.471153" stop-color="white" />
-                  <stop offset="0.570311" stop-color="#FFFF66" />
-                  <stop offset="1" stop-color="#0A0A0A" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </section>
-      <section class="bg-alabaster" id="faq">
-        <div class="content_container">
-          <div
-            class="flex items-center px-3 gap-2 text-sm font-semibold bg-white w-[5.25rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-6"
-          >
-            <div
-              class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
-            ></div>
-            FAQ
-          </div>
+								<p>No setup fee</p>
+							</div>
+							<div
+								class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
+							>
+								<div
+									class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="25"
+										height="21"
+										viewBox="0 0 25 21"
+										fill="none"
+									>
+										<path
+											d="M2 11.5L8 18L23 2"
+											stroke="black"
+											stroke-width="4"
+										/>
+									</svg>
+								</div>
+								<p>No monthly fee</p>
+							</div>
+							<div
+								class="flex items-center gap-6 text-white text-base s:text-lg sm:text-xl font-medium"
+							>
+								<div
+									class="w-[3.625rem] h-[3.625rem] flex-shrink-0 flex items-center justify-center bg-white border-2 border-primary rounded-[50%] shadow-default_yellow_5"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="25"
+										height="21"
+										viewBox="0 0 25 21"
+										fill="none"
+									>
+										<path
+											d="M2 11.5L8 18L23 2"
+											stroke="black"
+											stroke-width="4"
+										/>
+									</svg>
+								</div>
+								<p>Free integration support</p>
+							</div>
+						</div>
+						<svg
+							class="absolute sm:block hidden bottom-0 right-0"
+							xmlns="http://www.w3.org/2000/svg"
+							width="901"
+							height="218"
+							viewBox="0 0 901 218"
+							fill="none"
+						>
+							<path
+								d="M683.972 0.700195C684.353 81.3727 750.586 147.25 831.492 147.25C912.398 147.25 978.631 81.3727 979.013 0.700195L1110.3 0.700195C1109.92 153.435 984.601 278.284 831.492 278.284C678.383 278.284 553.068 153.435 552.687 0.700195L683.972 0.700195ZM279.508 0.714844C432.617 0.714844 557.932 125.565 558.313 278.3L427.028 278.3C426.647 197.627 360.414 131.75 279.508 131.75C198.602 131.75 132.369 197.627 131.987 278.3H0.702148C1.0841 125.565 126.399 0.714927 279.508 0.714844Z"
+								stroke="url(#paint0_linear_2057_3728)"
+								stroke-width="1.4"
+							/>
+							<defs>
+								<linearGradient
+									id="paint0_linear_2057_3728"
+									x1="122.739"
+									y1="-44.3863"
+									x2="767.397"
+									y2="392.174"
+									gradientUnits="userSpaceOnUse"
+								>
+									<stop stop-color="#0A0A0A" />
+									<stop offset="0.39423" stop-color="#B3B34A" />
+									<stop offset="0.471153" stop-color="white" />
+									<stop offset="0.570311" stop-color="#FFFF66" />
+									<stop offset="1" stop-color="#0A0A0A" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</div>
+				</div>
+			</section>
+			<section class="bg-alabaster" id="faq">
+				<div class="content_container">
+					<div
+						class="flex items-center px-3 gap-2 text-sm font-semibold bg-white w-[5.25rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-6"
+					>
+						<div
+							class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
+						></div>
+						FAQ
+					</div>
 
-          <h3 class="text-3x sm:text-4xl font-medium mb-8 sm:mb-14">
-            Is NumaPay right for me?
-          </h3>
+					<h3 class="text-3x sm:text-4xl font-medium mb-8 sm:mb-14">
+						Is NumaPay right for me?
+					</h3>
 
-          <div class="grid gap-6">
-            <div class="faq_item sm:max-h-[9rem] xs:max-h-[5rem] max-h-[5.625rem]">
-              <div class="flex items-center gap-4 justify-between">
-                <div class="flex items-center gap-4 sm:gap-6">
-                  <span class="faq_number"> 01 </span>
-                  <h4 class="faq_title">
-                    I don’t have a legal entity. Can I still use your service?
-                  </h4>
-                </div>
-                <div class="show_faq"></div>
-                <div class="hide_faq hidden"></div>
-              </div>
-              <div class="faq_item-hidden opacity-0 duration-300">
-                <span
-                  class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
-                ></span>
-                <p>
-                  Yes! You can freely use NumaPay without a legal entity. And if
-                  you ever need fiat settlements - our consulting team can help
-                  you with that.
-                </p>
-              </div>
-            </div>
+					<div class="grid gap-6">
+						<div
+							class="faq_item sm:max-h-[9rem] xs:max-h-[5rem] max-h-[5.625rem]"
+						>
+							<div class="flex items-center gap-4 justify-between">
+								<div class="flex items-center gap-4 sm:gap-6">
+									<span class="faq_number"> 01 </span>
+									<h4 class="faq_title">
+										I don’t have a legal entity. Can I still use your service?
+									</h4>
+								</div>
+								<div class="show_faq"></div>
+								<div class="hide_faq hidden"></div>
+							</div>
+							<div class="faq_item-hidden opacity-0 duration-300">
+								<span
+									class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
+								></span>
+								<p>
+									Yes! You can freely use NumaPay without a legal entity. And if
+									you ever need fiat settlements - our consulting team can help
+									you with that.
+								</p>
+							</div>
+						</div>
 
-            <div class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[7.875rem]">
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4 sm:gap-6">
-                  <span class="faq_number"> 02 </span>
-                  <h4 class="faq_title">
-                    I have multiple projects and need to connect many merchants
-                    with separate crypto wallets.
-                  </h4>
-                </div>
-                <div class="show_faq"></div>
-                <div class="hide_faq hidden"></div>
-              </div>
-              <div class="faq_item-hidden opacity-0 duration-300">
-                <span
-                  class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
-                ></span>
-                <p>
-                  Yes! You can freely use NumaPay without a legal entity. And if
-                  you ever need fiat settlements - our consulting team can help
-                  you with that.
-                </p>
-              </div>
-            </div>
+						<div
+							class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[7.875rem]"
+						>
+							<div class="flex items-center justify-between gap-4">
+								<div class="flex items-center gap-4 sm:gap-6">
+									<span class="faq_number"> 02 </span>
+									<h4 class="faq_title">
+										I have multiple projects and need to connect many merchants
+										with separate crypto wallets.
+									</h4>
+								</div>
+								<div class="show_faq"></div>
+								<div class="hide_faq hidden"></div>
+							</div>
+							<div class="faq_item-hidden opacity-0 duration-300">
+								<span
+									class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
+								></span>
+								<p>
+									Yes! You can freely use NumaPay without a legal entity. And if
+									you ever need fiat settlements - our consulting team can help
+									you with that.
+								</p>
+							</div>
+						</div>
 
-            <div
-              class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[8.75rem] xs:max-h-[7.875rem]"
-            >
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4 sm:gap-6">
-                  <span class="faq_number"> 03 </span>
-                  <h4 class="faq_title">
-                    Some of my clients are based in Europe and have stopped
-                    using USDT. Do you support USDC?
-                  </h4>
-                </div>
-                <div class="show_faq"></div>
-                <div class="hide_faq hidden"></div>
-              </div>
-              <div class="faq_item-hidden opacity-0 duration-300">
-                <span
-                  class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
-                ></span>
-                <p>
-                  Yes! You can freely use NumaPay without a legal entity. And if
-                  you ever need fiat settlements - our consulting team can help
-                  you with that.
-                </p>
-              </div>
-            </div>
+						<div
+							class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[8.75rem] xs:max-h-[7.875rem]"
+						>
+							<div class="flex items-center justify-between gap-4">
+								<div class="flex items-center gap-4 sm:gap-6">
+									<span class="faq_number"> 03 </span>
+									<h4 class="faq_title">
+										Some of my clients are based in Europe and have stopped
+										using USDT. Do you support USDC?
+									</h4>
+								</div>
+								<div class="show_faq"></div>
+								<div class="hide_faq hidden"></div>
+							</div>
+							<div class="faq_item-hidden opacity-0 duration-300">
+								<span
+									class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
+								></span>
+								<p>
+									Yes! You can freely use NumaPay without a legal entity. And if
+									you ever need fiat settlements - our consulting team can help
+									you with that.
+								</p>
+							</div>
+						</div>
 
-            <div class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[7.875rem]">
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4 sm:gap-6">
-                  <span class="faq_number"> 04 </span>
-                  <h4 class="faq_title">
-                    Due to the nature of my product, I cannot perform KYC. Can I
-                    skip it for my clients?
-                  </h4>
-                </div>
-                <div class="show_faq"></div>
-                <div class="hide_faq hidden"></div>
-              </div>
-              <div class="faq_item-hidden opacity-0 duration-300">
-                <span
-                  class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
-                ></span>
-                <p>
-                  Yes! You can freely use NumaPay without a legal entity. And if
-                  you ever need fiat settlements - our consulting team can help
-                  you with that.
-                </p>
-              </div>
-            </div>
+						<div
+							class="faq_item sm:max-h-[9rem] s:max-h-[6.25rem] max-h-[7.875rem]"
+						>
+							<div class="flex items-center justify-between gap-4">
+								<div class="flex items-center gap-4 sm:gap-6">
+									<span class="faq_number"> 04 </span>
+									<h4 class="faq_title">
+										Due to the nature of my product, I cannot perform KYC. Can I
+										skip it for my clients?
+									</h4>
+								</div>
+								<div class="show_faq"></div>
+								<div class="hide_faq hidden"></div>
+							</div>
+							<div class="faq_item-hidden opacity-0 duration-300">
+								<span
+									class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
+								></span>
+								<p>
+									Yes! You can freely use NumaPay without a legal entity. And if
+									you ever need fiat settlements - our consulting team can help
+									you with that.
+								</p>
+							</div>
+						</div>
 
-            <div
-              class="faq_item sm:max-h-[9rem] max-h-[8.75rem] xs:max-h-[7.938rem] s:max-h-[6.875rem]"
-            >
-              <div class="flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4 sm:gap-6">
-                  <span class="faq_number"> 05 </span>
-                  <h4 class="faq_title">
-                    My clients need a static address inside my product. Do you
-                    support static addresses for customers?
-                  </h4>
-                </div>
-                <div class="show_faq"></div>
-                <div class="hide_faq hidden"></div>
-              </div>
-              <div class="faq_item-hidden opacity-0 duration-300">
-                <span
-                  class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
-                ></span>
-                <p>
-                  Yes! You can freely use NumaPay without a legal entity. And if
-                  you ever need fiat settlements - our consulting team can help
-                  you with that.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="developers">
-        <div class="content_container">
-          <div
-            class="flex items-center px-3 gap-2 text-sm font-semibold bg-half w-[12.5rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-6 sm:mb-16"
-          >
-            <div
-              class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
-            ></div>
-            FOR DEVELOPERS
-          </div>
-          <div class="grid l:grid-cols-2 gap-7">
-            <div
-              class="relative rounded-3xx sm:rounded-4xl border overflow-hidden h-full grid border-mainYellow bg-codGray shadow-default_yellow p-8 sm:p-14"
-            >
-              <p
-                class="text-lg sm:text-xl lg:text-3xx font-medium text-white mb-10 sm:mb-14"
-              >
-                API documentation for fast and easy integration with your
-                payment form. Easily connect our payment gateway to your CMS,
-                CRM, or any platform. 
-              </p>
-              <button class="primary_btn mt-auto">Read more</button>
-              <svg
-                class="absolute -bottom-10 sm:bottom-0 right-0 sm:max-w-[27.875rem] max-w-[22.25rem]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="446"
-                height="166"
-                viewBox="0 0 446 166"
-                fill="none"
-              >
-                <path
-                  d="M418.979 0.700195C419.36 50.1712 460.022 90.5205 509.673 90.5205C559.323 90.5203 599.986 50.1711 600.366 0.700195L680.296 0.700195C679.914 94.038 603.283 170.29 509.673 170.29C416.062 170.29 339.431 94.0381 339.05 0.700195L418.979 0.700195ZM171.327 0.708984C264.938 0.708984 341.57 76.9619 341.951 170.3L262.021 170.3C261.641 120.829 220.978 80.4795 171.327 80.4795C121.677 80.4797 81.0143 120.829 80.6338 170.3H0.704102C1.08565 76.962 77.717 0.709208 171.327 0.708984Z"
-                  stroke="url(#paint0_linear_2057_1905)"
-                  stroke-width="1.4"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2057_1905"
-                    x1="75.2343"
-                    y1="-27.2045"
-                    x2="470.361"
-                    y2="240.4"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#0A0A0A" />
-                    <stop offset="0.39423" stop-color="#B3B34A" />
-                    <stop offset="0.471153" stop-color="white" />
-                    <stop offset="0.570311" stop-color="#FFFF66" />
-                    <stop offset="1" stop-color="#0A0A0A" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div
-              class="relative overflow-hidden h-full rounded-3xx sm:rounded-4xl grid border border-mainYellow bg-mainYellow shadow-default_4 p-8 sm:p-14"
-            >
-              <p
-                class="text-lg sm:text-xl lg:text-3xx font-medium mb-10 sm:mb-14"
-              >
-                Best practices for optimizing your payment form from our experts
-                - tested across hundreds of projects and millions of
-                transactions to ensure high conversion.
-              </p>
-              <button class="secondary_btn mt-auto">Read more</button>
-              <svg
-                class="absolute -bottom-10 sm:bottom-0 right-0 sm:max-w-[27.875rem] max-w-[22.25rem]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="446"
-                height="166"
-                viewBox="0 0 446 166"
-                fill="none"
-              >
-                <path
-                  d="M418.979 0.700195C419.36 50.1712 460.022 90.5205 509.673 90.5205C559.323 90.5203 599.986 50.1711 600.366 0.700195L680.296 0.700195C679.914 94.038 603.283 170.29 509.673 170.29C416.062 170.29 339.431 94.0381 339.05 0.700195L418.979 0.700195ZM171.327 0.708984C264.938 0.708984 341.57 76.9619 341.951 170.3L262.021 170.3C261.641 120.829 220.978 80.4795 171.327 80.4795C121.677 80.4797 81.0143 120.829 80.6338 170.3H0.704102C1.08565 76.962 77.717 0.709208 171.327 0.708984Z"
-                  stroke="url(#paint0_linear_2057_1919)"
-                  stroke-width="1.4"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2057_1919"
-                    x1="75.2343"
-                    y1="-27.2045"
-                    x2="470.361"
-                    y2="240.4"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0.0414405" stop-color="#FFFF66" />
-                    <stop offset="0.434568" stop-color="#191919" />
-                    <stop offset="1" stop-color="#FFFF66" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bg-primary relative overflow-hidden">
-        <div class="content_container l:pb-0 pb-[6.875rem] md:pb-[4.375rem]">
-          <div
-            class="flex l:flex-row flex-col items-start justify-between gap-8 l:gap-5 lg:gap-20"
-          >
-            <h3
-              class="sm:text-3xl text-3x xl:text-5xl text-mainYellow font-medium"
-            >
-              Speak an expert
-            </h3>
-            <div class="absolute bottom-0 left-0">
-              <svg
-                width="734"
-                height="625"
-                viewBox="0 0 734 625"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[-11.25rem] sm:left-0 bottom-[-11.25rem] sm:bottom-0 line line-1 sm:scale-[1] scale-[0.5]"
-              >
-                <circle
-                  cx="269.5"
-                  cy="464.5"
-                  r="463.8"
-                  stroke="url(#paint0_linear_2050_1567)"
-                  stroke-width="1.4"
-                  transform="rotate(90 269.5 464.5)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2050_1567"
-                    x1="-92.3677"
-                    y1="-147.795"
-                    x2="671.792"
-                    y2="-17.8414"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#0A0A0A" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.39423"
-                      stop-color="#B3B34A"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.471153"
-                      stop-color="white"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="#FFFF66"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#0A0A0A"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+						<div
+							class="faq_item sm:max-h-[9rem] max-h-[8.75rem] xs:max-h-[7.938rem] s:max-h-[6.875rem]"
+						>
+							<div class="flex items-center justify-between gap-4">
+								<div class="flex items-center gap-4 sm:gap-6">
+									<span class="faq_number"> 05 </span>
+									<h4 class="faq_title">
+										My clients need a static address inside my product. Do you
+										support static addresses for customers?
+									</h4>
+								</div>
+								<div class="show_faq"></div>
+								<div class="hide_faq hidden"></div>
+							</div>
+							<div class="faq_item-hidden opacity-0 duration-300">
+								<span
+									class="my-6 sm:my-[1.875rem] block w-full h-[0.063rem] bg-primary"
+								></span>
+								<p>
+									Yes! You can freely use NumaPay without a legal entity. And if
+									you ever need fiat settlements - our consulting team can help
+									you with that.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="developers">
+				<div class="content_container">
+					<div
+						class="flex items-center px-3 gap-2 text-sm font-semibold bg-half w-[12.5rem] rounded-[6.25rem] tracking-[0.158rem] h-[2.313rem] mb-6 sm:mb-16"
+					>
+						<div
+							class="bg-mainYellow w-2 h-2 rounded-[50%] flex-shrink-0"
+						></div>
+						FOR DEVELOPERS
+					</div>
+					<div class="grid l:grid-cols-2 gap-7">
+						<div
+							class="relative rounded-3xx sm:rounded-4xl border overflow-hidden h-full grid border-mainYellow bg-codGray shadow-default_yellow p-8 sm:p-14"
+						>
+							<p
+								class="text-lg sm:text-xl lg:text-3xx font-medium text-white mb-10 sm:mb-14"
+							>
+								API documentation for fast and easy integration with your
+								payment form. Easily connect our payment gateway to your CMS,
+								CRM, or any platform. 
+							</p>
+							<button class="primary_btn mt-auto">Read more</button>
+							<svg
+								class="absolute -bottom-10 sm:bottom-0 right-0 sm:max-w-[27.875rem] max-w-[22.25rem]"
+								xmlns="http://www.w3.org/2000/svg"
+								width="446"
+								height="166"
+								viewBox="0 0 446 166"
+								fill="none"
+							>
+								<path
+									d="M418.979 0.700195C419.36 50.1712 460.022 90.5205 509.673 90.5205C559.323 90.5203 599.986 50.1711 600.366 0.700195L680.296 0.700195C679.914 94.038 603.283 170.29 509.673 170.29C416.062 170.29 339.431 94.0381 339.05 0.700195L418.979 0.700195ZM171.327 0.708984C264.938 0.708984 341.57 76.9619 341.951 170.3L262.021 170.3C261.641 120.829 220.978 80.4795 171.327 80.4795C121.677 80.4797 81.0143 120.829 80.6338 170.3H0.704102C1.08565 76.962 77.717 0.709208 171.327 0.708984Z"
+									stroke="url(#paint0_linear_2057_1905)"
+									stroke-width="1.4"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2057_1905"
+										x1="75.2343"
+										y1="-27.2045"
+										x2="470.361"
+										y2="240.4"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop stop-color="#0A0A0A" />
+										<stop offset="0.39423" stop-color="#B3B34A" />
+										<stop offset="0.471153" stop-color="white" />
+										<stop offset="0.570311" stop-color="#FFFF66" />
+										<stop offset="1" stop-color="#0A0A0A" />
+									</linearGradient>
+								</defs>
+							</svg>
+						</div>
+						<div
+							class="relative overflow-hidden h-full rounded-3xx sm:rounded-4xl grid border border-mainYellow bg-mainYellow shadow-default_4 p-8 sm:p-14"
+						>
+							<p
+								class="text-lg sm:text-xl lg:text-3xx font-medium mb-10 sm:mb-14"
+							>
+								Best practices for optimizing your payment form from our experts
+								- tested across hundreds of projects and millions of
+								transactions to ensure high conversion.
+							</p>
+							<button class="secondary_btn mt-auto">Read more</button>
+							<svg
+								class="absolute -bottom-10 sm:bottom-0 right-0 sm:max-w-[27.875rem] max-w-[22.25rem]"
+								xmlns="http://www.w3.org/2000/svg"
+								width="446"
+								height="166"
+								viewBox="0 0 446 166"
+								fill="none"
+							>
+								<path
+									d="M418.979 0.700195C419.36 50.1712 460.022 90.5205 509.673 90.5205C559.323 90.5203 599.986 50.1711 600.366 0.700195L680.296 0.700195C679.914 94.038 603.283 170.29 509.673 170.29C416.062 170.29 339.431 94.0381 339.05 0.700195L418.979 0.700195ZM171.327 0.708984C264.938 0.708984 341.57 76.9619 341.951 170.3L262.021 170.3C261.641 120.829 220.978 80.4795 171.327 80.4795C121.677 80.4797 81.0143 120.829 80.6338 170.3H0.704102C1.08565 76.962 77.717 0.709208 171.327 0.708984Z"
+									stroke="url(#paint0_linear_2057_1919)"
+									stroke-width="1.4"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2057_1919"
+										x1="75.2343"
+										y1="-27.2045"
+										x2="470.361"
+										y2="240.4"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop offset="0.0414405" stop-color="#FFFF66" />
+										<stop offset="0.434568" stop-color="#191919" />
+										<stop offset="1" stop-color="#FFFF66" />
+									</linearGradient>
+								</defs>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-primary relative overflow-hidden">
+				<div class="content_container l:pb-0 pb-[6.875rem] md:pb-[4.375rem]">
+					<div
+						class="flex l:flex-row flex-col items-start justify-between gap-8 l:gap-5 lg:gap-20"
+					>
+						<h3
+							class="sm:text-3xl text-3x xl:text-5xl text-mainYellow font-medium"
+						>
+							Speak an expert
+						</h3>
+						<div class="absolute bottom-0 left-0">
+							<svg
+								width="734"
+								height="625"
+								viewBox="0 0 734 625"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="absolute left-[-11.25rem] sm:left-0 bottom-[-11.25rem] sm:bottom-0 line line-1 sm:scale-[1] scale-[0.5]"
+							>
+								<circle
+									cx="269.5"
+									cy="464.5"
+									r="463.8"
+									stroke="url(#paint0_linear_2050_1567)"
+									stroke-width="1.4"
+									transform="rotate(90 269.5 464.5)"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2050_1567"
+										x1="-92.3677"
+										y1="-147.795"
+										x2="671.792"
+										y2="-17.8414"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#0A0A0A" />
+										<stop
+											class="gradient-stop"
+											offset="0.39423"
+											stop-color="#B3B34A"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.471153"
+											stop-color="white"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="#FFFF66"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#0A0A0A"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
 
-              <svg
-                width="675"
-                height="566"
-                viewBox="0 0 675 566"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute sm:left-0 left-[-8.438rem] bottom-[-7.5rem] sm:bottom-0 line line-2 sm:scale-[1] scale-[0.6]"
-              >
-                <circle
-                  cx="269.5"
-                  cy="405.5"
-                  r="404.249"
-                  stroke="url(#paint0_linear_2050_1565)"
-                  stroke-width="1.4"
-                  transform="rotate(90 269.5 405.5)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2050_1565"
-                    x1="594.5"
-                    y1="-238"
-                    x2="1147.47"
-                    y2="180.558"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#0A0A0A" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.39423"
-                      stop-color="#B3B34A"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.471153"
-                      stop-color="white"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="#FFFF66"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#0A0A0A"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+							<svg
+								width="675"
+								height="566"
+								viewBox="0 0 675 566"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="absolute sm:left-0 left-[-8.438rem] bottom-[-7.5rem] sm:bottom-0 line line-2 sm:scale-[1] scale-[0.6]"
+							>
+								<circle
+									cx="269.5"
+									cy="405.5"
+									r="404.249"
+									stroke="url(#paint0_linear_2050_1565)"
+									stroke-width="1.4"
+									transform="rotate(90 269.5 405.5)"
+								/>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2050_1565"
+										x1="594.5"
+										y1="-238"
+										x2="1147.47"
+										y2="180.558"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#0A0A0A" />
+										<stop
+											class="gradient-stop"
+											offset="0.39423"
+											stop-color="#B3B34A"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.471153"
+											stop-color="white"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="#FFFF66"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#0A0A0A"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
 
-              <svg
-                width="615"
-                height="506"
-                viewBox="0 0 615 506"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute sm:left-0 sm:bottom-0 line line-3 sm:scale-[1] scale-[0.75] bottom-[-4.375rem] left-[-6.25rem]"
-              >
-                <circle
-                  cx="269.5"
-                  cy="345.5"
-                  r="344.697"
-                  stroke="url(#paint0_linear_2050_1564)"
-                  stroke-width="1.4"
-                  class="circle-animation"
-                  transform="rotate(90 269.5 345.5)"
-                />
+							<svg
+								width="615"
+								height="506"
+								viewBox="0 0 615 506"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="absolute sm:left-0 sm:bottom-0 line line-3 sm:scale-[1] scale-[0.75] bottom-[-4.375rem] left-[-6.25rem]"
+							>
+								<circle
+									cx="269.5"
+									cy="345.5"
+									r="344.697"
+									stroke="url(#paint0_linear_2050_1564)"
+									stroke-width="1.4"
+									class="circle-animation"
+									transform="rotate(90 269.5 345.5)"
+								/>
 
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2050_1564"
-                    x1="-225"
-                    y1="48.5"
-                    x2="68.0576"
-                    y2="-268.166"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop class="gradient-stop" stop-color="#0A0A0A" />
-                    <stop
-                      class="gradient-stop"
-                      offset="0.570311"
-                      stop-color="#FFFF66"
-                    />
-                    <stop
-                      class="gradient-stop"
-                      offset="1"
-                      stop-color="#0A0A0A"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
+								<defs>
+									<linearGradient
+										id="paint0_linear_2050_1564"
+										x1="-225"
+										y1="48.5"
+										x2="68.0576"
+										y2="-268.166"
+										gradientUnits="userSpaceOnUse"
+									>
+										<stop class="gradient-stop" stop-color="#0A0A0A" />
+										<stop
+											class="gradient-stop"
+											offset="0.570311"
+											stop-color="#FFFF66"
+										/>
+										<stop
+											class="gradient-stop"
+											offset="1"
+											stop-color="#0A0A0A"
+										/>
+									</linearGradient>
+								</defs>
+							</svg>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="525"
-                height="134"
-                viewBox="0 0 525 134"
-                fill="none"
-                class="relative md:max-w-[32.813rem] max-w-[20.625rem] bottom-0 md:bottom-10 l:bottom-[7.5rem] -left-20 sm:left-2"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M132.421 63.7269C170.543 63.7269 201.733 95.0603 201.733 133.358H264.368C264.368 60.4528 204.992 0.802734 132.421 0.802734C59.8509 0.802734 0.474365 60.4528 0.474365 133.358H63.1099C63.1099 95.0603 94.2996 63.7269 132.421 63.7269Z"
-                  fill="#FFFF66"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M392.666 70.4336C354.545 70.4336 323.355 39.1002 323.355 0.802734H260.72C260.72 73.7077 320.096 133.358 392.666 133.358C465.237 133.358 524.613 73.7077 524.613 0.802734H461.978C461.978 39.1002 430.788 70.4336 392.666 70.4336Z"
-                  fill="#FFFF66"
-                />
-              </svg>
-            </div>
-            <form
-              class="max-w-full l:max-w-[31.25rem] xl:max-w-[39.375rem] w-full grid gap-8"
-            >
-              <div class="grid gap-2 relative">
-                <label class="form_label" for="name">Name</label>
-                <input
-                  class="form_input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                  required
-                />
-                <span class="error_message hidden"></span>
-              </div>
-              <div class="grid gap-2 relative">
-                <label class="form_label" for="email">Work e-mail</label>
-                <input
-                  class="form_input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your work e-mail"
-                  required
-                />
-                <span class="error_message hidden"></span>
-              </div>
-              <div class="grid gap-2 relative">
-                <label class="form_label" for="messenger">Messenger</label>
-                <input
-                  class="form_input"
-                  type="text"
-                  id="messenger"
-                  name="messenger"
-                  placeholder="Enter your Telegram or WhatsApp"
-                  required
-                />
-                <span class="error_message hidden"></span>
-              </div>
-              <div class="grid gap-2 relative">
-                <label class="form_label" for="message">Message</label>
-                <textarea
-                  class="min-h-[9rem] form_input resize-none"
-                  name="message"
-                  id="message"
-                  placeholder="Enter your message"
-                ></textarea>
-                <span class="error_message hidden"></span>
-              </div>
-              <button disabled class="primary_btn w-full">Send</button>
-            </form>
-          </div>
-        </div>
-      </section>
-      <footer class="bg-codGray sm:pt-20 pt-14 pb-14">
-        <div class="content_container">
-          <div
-            class="flex items-start justify-between lg:flex-row flex-col lg:gap-0 gap-10 mb-12 lg:mb-[4.688rem]"
-          >
-            <div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
-              <p class="footer_titles">FOLLOW US</p>
-              <div class="flex items-start gap-[2.375rem]">
-                <a target="_blank" href="#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="38"
-                    height="38"
-                    viewBox="0 0 38 38"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_2002_19460)">
-                      <path
-                        d="M24.8803 0.285156C29.3146 0.292861 29.4874 0.329808 30.354 0.455078C32.1424 0.713049 33.6433 1.42645 34.8706 2.59863C35.5582 3.26037 36.0319 3.9078 36.4585 4.77441C36.9783 5.83304 37.234 6.83472 37.351 8.32422C37.3761 8.64556 37.3872 13.7307 37.3872 18.8193C37.3872 23.908 37.3771 29.0036 37.352 29.3232C37.2364 30.7891 36.9806 31.7992 36.477 32.8379C35.4755 34.9038 33.6353 36.4108 31.4126 36.9844C30.6065 37.1927 29.877 37.2905 28.6215 37.3496C28.1736 37.3724 23.4884 37.3779 18.8032 37.3779C14.1178 37.3779 9.43446 37.3637 8.97505 37.3438C7.89096 37.2924 7.04631 37.1842 6.28169 36.9873C4.07327 36.4166 2.19886 34.8869 1.21724 32.8496C0.703657 31.7853 0.460888 30.812 0.332475 29.2656C0.295381 28.8262 0.286577 26.563 0.286577 18.8242C0.286577 16.2169 0.283724 14.2729 0.286577 12.7959C0.293997 8.36514 0.330949 8.18777 0.456499 7.32031C0.714793 5.53363 1.42799 4.03037 2.60494 2.80859C3.25121 2.13863 3.90646 1.66036 4.73677 1.24805C5.81401 0.711759 6.80304 0.462185 8.39205 0.330078C8.83233 0.293553 11.0976 0.285156 18.8422 0.285156H24.8803ZM18.8315 5.13574C15.114 5.13575 14.6466 5.15228 13.186 5.21875C11.7281 5.28555 10.7326 5.51678 9.86177 5.85547C8.96114 6.20529 8.19716 6.67311 7.43599 7.43457C6.67416 8.19585 6.2059 8.95984 5.85494 9.86035C5.5154 10.7315 5.28387 11.7272 5.21822 13.1846C5.15287 14.6456 5.13619 15.1131 5.13619 18.833C5.13619 22.5528 5.15299 23.0185 5.21919 24.4795C5.28627 25.9375 5.51654 26.9329 5.85494 27.8037C6.20503 28.7045 6.67354 29.4682 7.43501 30.2295C8.19603 30.9914 8.96053 31.4607 9.8608 31.8105C10.7321 32.1492 11.7275 32.3805 13.185 32.4473C14.646 32.5138 15.113 32.5303 18.8325 32.5303C22.5523 32.5303 23.018 32.5138 24.479 32.4473C25.9367 32.3805 26.9328 32.1492 27.8042 31.8105C28.7047 31.4607 29.4679 30.9914 30.229 30.2295C30.9908 29.4682 31.4591 28.7042 31.81 27.8037C32.1467 26.9326 32.3783 25.937 32.4467 24.4795C32.5124 23.0185 32.5288 22.5528 32.5288 18.833C32.5288 15.1135 32.5123 14.6463 32.4467 13.1855C32.3783 11.7274 32.1467 10.7313 31.81 9.86035C31.4591 8.95966 30.9907 8.19578 30.229 7.43457C29.4673 6.67285 28.7056 6.205 27.8042 5.85547C26.9311 5.51679 25.9349 5.28555 24.477 5.21875C23.0163 5.15227 22.5507 5.13575 18.8315 5.13574ZM17.6049 7.60449C17.9695 7.60392 18.3765 7.60449 18.8335 7.60449C22.4904 7.60449 22.9245 7.61699 24.3686 7.68262C25.7039 7.74369 26.4288 7.96683 26.9116 8.1543C27.5507 8.40255 28.0067 8.69933 28.4858 9.17871C28.9651 9.65801 29.2614 10.1149 29.5102 10.7539C29.6977 11.2362 29.9211 11.9614 29.9819 13.2969C30.0475 14.7407 30.062 15.1748 30.062 18.8301C30.062 22.4848 30.0475 22.9188 29.9819 24.3623C29.9208 25.6978 29.6977 26.423 29.5102 26.9053C29.262 27.5443 28.965 27.9995 28.4858 28.4785C28.0065 28.9579 27.5509 29.2547 26.9116 29.5029C26.4294 29.6913 25.7039 29.9145 24.3686 29.9756C22.9248 30.0412 22.4904 30.0547 18.8335 30.0547C15.1766 30.0547 14.7431 30.0412 13.2993 29.9756C11.9641 29.914 11.2394 29.6904 10.7563 29.5029C10.1172 29.2547 9.66045 28.9578 9.18111 28.4785C8.70174 27.9991 8.40454 27.5438 8.15572 26.9043C7.96825 26.422 7.74482 25.6968 7.68404 24.3613C7.61842 22.9177 7.60591 22.4836 7.60591 18.8262C7.60591 15.1687 7.61841 14.7368 7.68404 13.293C7.74513 11.9577 7.96826 11.2328 8.15572 10.75C8.40396 10.1109 8.70176 9.65416 9.18111 9.1748C9.66041 8.69554 10.1172 8.39918 10.7563 8.15039C11.2391 7.96207 11.964 7.73909 13.2993 7.67773C14.5627 7.62067 15.0525 7.60344 17.6049 7.60059V7.60449ZM18.8335 11.7988C14.9493 11.7991 11.8002 14.9486 11.8002 18.833C11.8003 22.7173 14.9493 25.865 18.8335 25.8652C22.7178 25.8652 25.8666 22.7175 25.8667 18.833C25.8667 14.9485 22.7179 11.7988 18.8335 11.7988ZM18.8335 14.2676C21.3548 14.2676 23.3999 16.3113 23.3999 18.833C23.3998 21.3543 21.3547 23.3984 18.8335 23.3984C16.3121 23.3982 14.2681 21.3542 14.268 18.833C14.268 16.3115 16.3121 14.2678 18.8335 14.2676ZM26.145 9.87891C25.2376 9.87893 24.5015 10.6138 24.5014 11.5215C24.5014 12.4289 25.2376 13.165 26.145 13.165C27.0524 13.165 27.7885 12.4289 27.7885 11.5215C27.7885 10.6141 27.0523 9.87793 26.145 9.87793V9.87891Z"
-                        fill="#828282"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2002_19460">
-                        <rect width="37.6667" height="37.6667" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-                <a href="#" target="_blank">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="38"
-                    height="38"
-                    viewBox="0 0 38 38"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_2002_19476)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M4.51853 37.6667H33.8148C36.1262 37.6667 38 35.7929 38 33.4815V4.18519C38 1.87377 36.1262 0 33.8148 0H4.51853C2.20711 0 0.333344 1.87377 0.333344 4.18519V33.4815C0.333344 35.7929 2.20711 37.6667 4.51853 37.6667ZM32.7685 32.4351H27.179V22.9149C27.179 20.3047 26.1872 18.846 24.1212 18.846C21.8738 18.846 20.6995 20.364 20.6995 22.9149V32.4351H15.3128V14.2993H20.6995V16.7421C20.6995 16.7421 22.3192 13.7452 26.1677 13.7452C30.0145 13.7452 32.7685 16.0942 32.7685 20.9526V32.4351ZM8.88646 11.9245C7.05163 11.9245 5.56481 10.426 5.56481 8.57794C5.56481 6.72984 7.05163 5.23135 8.88646 5.23135C10.7213 5.23135 12.2072 6.72984 12.2072 8.57794C12.2072 10.426 10.7213 11.9245 8.88646 11.9245ZM6.10499 32.4351H11.722V14.2993H6.10499V32.4351Z"
-                        fill="#828282"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2002_19476">
-                        <rect
-                          width="37.6667"
-                          height="37.6667"
-                          fill="white"
-                          transform="translate(0.333344)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div
-              class="flex md:flex-row flex-col items-stretch gap-10 xl:gap-20 2xl:gap-[6.875rem]"
-            >
-              <div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
-                <p class="footer_titles">Become our Client</p>
-                <a class="footer_link" href="mailto:hello@numaoay.com"
-                  >hello@numapay.com</a
-                >
-              </div>
-              <div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
-                <p class="footer_titles">For Developers</p>
-                <div class="flex-col flex gap-6">
-                  <a class="footer_link" href="#">Documentation</a>
-                  <a class="footer_link" href="#">Payform best practices</a>
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
-                <p class="footer_titles">Two pages like any other</p>
-                <div class="flex-col flex gap-6">
-                  <a class="footer_link" href="#">Terms and Conditions</a>
-                  <a class="footer_link" href="#">Privacy Policy</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="h-[0.063rem] w-full bg-mainYellow mb-12 lg:mb-[4.5rem]"></div>
-          <p class="text-center text-[#DDD]">
-            No copyrights. We’ve been in crypto since January 3, 2009.
-          </p>
-        </div>
-      </footer>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="525"
+								height="134"
+								viewBox="0 0 525 134"
+								fill="none"
+								class="relative md:max-w-[32.813rem] max-w-[20.625rem] bottom-0 md:bottom-10 l:bottom-[7.5rem] -left-20 sm:left-2"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M132.421 63.7269C170.543 63.7269 201.733 95.0603 201.733 133.358H264.368C264.368 60.4528 204.992 0.802734 132.421 0.802734C59.8509 0.802734 0.474365 60.4528 0.474365 133.358H63.1099C63.1099 95.0603 94.2996 63.7269 132.421 63.7269Z"
+									fill="#FFFF66"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M392.666 70.4336C354.545 70.4336 323.355 39.1002 323.355 0.802734H260.72C260.72 73.7077 320.096 133.358 392.666 133.358C465.237 133.358 524.613 73.7077 524.613 0.802734H461.978C461.978 39.1002 430.788 70.4336 392.666 70.4336Z"
+									fill="#FFFF66"
+								/>
+							</svg>
+						</div>
+						<form
+							class="max-w-full l:max-w-[31.25rem] xl:max-w-[39.375rem] w-full grid gap-8"
+						>
+							<div class="grid gap-2 relative">
+								<label class="form_label" for="name">Name</label>
+								<input
+									class="form_input"
+									type="text"
+									id="name"
+									name="name"
+									placeholder="Enter your name"
+									required
+								/>
+								<span class="error_message hidden"></span>
+							</div>
+							<div class="grid gap-2 relative">
+								<label class="form_label" for="email">Work e-mail</label>
+								<input
+									class="form_input"
+									type="email"
+									id="email"
+									name="email"
+									placeholder="Enter your work e-mail"
+									required
+								/>
+								<span class="error_message hidden"></span>
+							</div>
+							<div class="grid gap-2 relative">
+								<label class="form_label" for="messenger">Messenger</label>
+								<input
+									class="form_input"
+									type="text"
+									id="messenger"
+									name="messenger"
+									placeholder="Enter your Telegram or WhatsApp"
+									required
+								/>
+								<span class="error_message hidden"></span>
+							</div>
+							<div class="grid gap-2 relative">
+								<label class="form_label" for="message">Message</label>
+								<textarea
+									class="min-h-[9rem] form_input resize-none"
+									name="message"
+									id="message"
+									placeholder="Enter your message"
+								></textarea>
+								<span class="error_message hidden"></span>
+							</div>
+							<button disabled class="primary_btn w-full">Send</button>
+						</form>
+					</div>
+				</div>
+			</section>
+			<footer class="bg-codGray sm:pt-20 pt-14 pb-14">
+				<div class="content_container">
+					<div
+						class="flex items-start justify-between lg:flex-row flex-col lg:gap-0 gap-10 mb-12 lg:mb-[4.688rem]"
+					>
+						<div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
+							<p class="footer_titles">FOLLOW US</p>
+							<div class="flex items-start gap-[2.375rem]">
+								<a target="_blank" href="#">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="38"
+										height="38"
+										viewBox="0 0 38 38"
+										fill="none"
+									>
+										<g clip-path="url(#clip0_2002_19460)">
+											<path
+												d="M24.8803 0.285156C29.3146 0.292861 29.4874 0.329808 30.354 0.455078C32.1424 0.713049 33.6433 1.42645 34.8706 2.59863C35.5582 3.26037 36.0319 3.9078 36.4585 4.77441C36.9783 5.83304 37.234 6.83472 37.351 8.32422C37.3761 8.64556 37.3872 13.7307 37.3872 18.8193C37.3872 23.908 37.3771 29.0036 37.352 29.3232C37.2364 30.7891 36.9806 31.7992 36.477 32.8379C35.4755 34.9038 33.6353 36.4108 31.4126 36.9844C30.6065 37.1927 29.877 37.2905 28.6215 37.3496C28.1736 37.3724 23.4884 37.3779 18.8032 37.3779C14.1178 37.3779 9.43446 37.3637 8.97505 37.3438C7.89096 37.2924 7.04631 37.1842 6.28169 36.9873C4.07327 36.4166 2.19886 34.8869 1.21724 32.8496C0.703657 31.7853 0.460888 30.812 0.332475 29.2656C0.295381 28.8262 0.286577 26.563 0.286577 18.8242C0.286577 16.2169 0.283724 14.2729 0.286577 12.7959C0.293997 8.36514 0.330949 8.18777 0.456499 7.32031C0.714793 5.53363 1.42799 4.03037 2.60494 2.80859C3.25121 2.13863 3.90646 1.66036 4.73677 1.24805C5.81401 0.711759 6.80304 0.462185 8.39205 0.330078C8.83233 0.293553 11.0976 0.285156 18.8422 0.285156H24.8803ZM18.8315 5.13574C15.114 5.13575 14.6466 5.15228 13.186 5.21875C11.7281 5.28555 10.7326 5.51678 9.86177 5.85547C8.96114 6.20529 8.19716 6.67311 7.43599 7.43457C6.67416 8.19585 6.2059 8.95984 5.85494 9.86035C5.5154 10.7315 5.28387 11.7272 5.21822 13.1846C5.15287 14.6456 5.13619 15.1131 5.13619 18.833C5.13619 22.5528 5.15299 23.0185 5.21919 24.4795C5.28627 25.9375 5.51654 26.9329 5.85494 27.8037C6.20503 28.7045 6.67354 29.4682 7.43501 30.2295C8.19603 30.9914 8.96053 31.4607 9.8608 31.8105C10.7321 32.1492 11.7275 32.3805 13.185 32.4473C14.646 32.5138 15.113 32.5303 18.8325 32.5303C22.5523 32.5303 23.018 32.5138 24.479 32.4473C25.9367 32.3805 26.9328 32.1492 27.8042 31.8105C28.7047 31.4607 29.4679 30.9914 30.229 30.2295C30.9908 29.4682 31.4591 28.7042 31.81 27.8037C32.1467 26.9326 32.3783 25.937 32.4467 24.4795C32.5124 23.0185 32.5288 22.5528 32.5288 18.833C32.5288 15.1135 32.5123 14.6463 32.4467 13.1855C32.3783 11.7274 32.1467 10.7313 31.81 9.86035C31.4591 8.95966 30.9907 8.19578 30.229 7.43457C29.4673 6.67285 28.7056 6.205 27.8042 5.85547C26.9311 5.51679 25.9349 5.28555 24.477 5.21875C23.0163 5.15227 22.5507 5.13575 18.8315 5.13574ZM17.6049 7.60449C17.9695 7.60392 18.3765 7.60449 18.8335 7.60449C22.4904 7.60449 22.9245 7.61699 24.3686 7.68262C25.7039 7.74369 26.4288 7.96683 26.9116 8.1543C27.5507 8.40255 28.0067 8.69933 28.4858 9.17871C28.9651 9.65801 29.2614 10.1149 29.5102 10.7539C29.6977 11.2362 29.9211 11.9614 29.9819 13.2969C30.0475 14.7407 30.062 15.1748 30.062 18.8301C30.062 22.4848 30.0475 22.9188 29.9819 24.3623C29.9208 25.6978 29.6977 26.423 29.5102 26.9053C29.262 27.5443 28.965 27.9995 28.4858 28.4785C28.0065 28.9579 27.5509 29.2547 26.9116 29.5029C26.4294 29.6913 25.7039 29.9145 24.3686 29.9756C22.9248 30.0412 22.4904 30.0547 18.8335 30.0547C15.1766 30.0547 14.7431 30.0412 13.2993 29.9756C11.9641 29.914 11.2394 29.6904 10.7563 29.5029C10.1172 29.2547 9.66045 28.9578 9.18111 28.4785C8.70174 27.9991 8.40454 27.5438 8.15572 26.9043C7.96825 26.422 7.74482 25.6968 7.68404 24.3613C7.61842 22.9177 7.60591 22.4836 7.60591 18.8262C7.60591 15.1687 7.61841 14.7368 7.68404 13.293C7.74513 11.9577 7.96826 11.2328 8.15572 10.75C8.40396 10.1109 8.70176 9.65416 9.18111 9.1748C9.66041 8.69554 10.1172 8.39918 10.7563 8.15039C11.2391 7.96207 11.964 7.73909 13.2993 7.67773C14.5627 7.62067 15.0525 7.60344 17.6049 7.60059V7.60449ZM18.8335 11.7988C14.9493 11.7991 11.8002 14.9486 11.8002 18.833C11.8003 22.7173 14.9493 25.865 18.8335 25.8652C22.7178 25.8652 25.8666 22.7175 25.8667 18.833C25.8667 14.9485 22.7179 11.7988 18.8335 11.7988ZM18.8335 14.2676C21.3548 14.2676 23.3999 16.3113 23.3999 18.833C23.3998 21.3543 21.3547 23.3984 18.8335 23.3984C16.3121 23.3982 14.2681 21.3542 14.268 18.833C14.268 16.3115 16.3121 14.2678 18.8335 14.2676ZM26.145 9.87891C25.2376 9.87893 24.5015 10.6138 24.5014 11.5215C24.5014 12.4289 25.2376 13.165 26.145 13.165C27.0524 13.165 27.7885 12.4289 27.7885 11.5215C27.7885 10.6141 27.0523 9.87793 26.145 9.87793V9.87891Z"
+												fill="#828282"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_2002_19460">
+												<rect width="37.6667" height="37.6667" fill="white" />
+											</clipPath>
+										</defs>
+									</svg>
+								</a>
+								<a href="#" target="_blank">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="38"
+										height="38"
+										viewBox="0 0 38 38"
+										fill="none"
+									>
+										<g clip-path="url(#clip0_2002_19476)">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4.51853 37.6667H33.8148C36.1262 37.6667 38 35.7929 38 33.4815V4.18519C38 1.87377 36.1262 0 33.8148 0H4.51853C2.20711 0 0.333344 1.87377 0.333344 4.18519V33.4815C0.333344 35.7929 2.20711 37.6667 4.51853 37.6667ZM32.7685 32.4351H27.179V22.9149C27.179 20.3047 26.1872 18.846 24.1212 18.846C21.8738 18.846 20.6995 20.364 20.6995 22.9149V32.4351H15.3128V14.2993H20.6995V16.7421C20.6995 16.7421 22.3192 13.7452 26.1677 13.7452C30.0145 13.7452 32.7685 16.0942 32.7685 20.9526V32.4351ZM8.88646 11.9245C7.05163 11.9245 5.56481 10.426 5.56481 8.57794C5.56481 6.72984 7.05163 5.23135 8.88646 5.23135C10.7213 5.23135 12.2072 6.72984 12.2072 8.57794C12.2072 10.426 10.7213 11.9245 8.88646 11.9245ZM6.10499 32.4351H11.722V14.2993H6.10499V32.4351Z"
+												fill="#828282"
+											/>
+										</g>
+										<defs>
+											<clipPath id="clip0_2002_19476">
+												<rect
+													width="37.6667"
+													height="37.6667"
+													fill="white"
+													transform="translate(0.333344)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
+								</a>
+							</div>
+						</div>
+						<div
+							class="flex md:flex-row flex-col items-stretch gap-10 xl:gap-20 2xl:gap-[6.875rem]"
+						>
+							<div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
+								<p class="footer_titles">Become our Client</p>
+								<a class="footer_link" href="mailto:hello@numaoay.com"
+									>hello@numapay.com</a
+								>
+							</div>
+							<div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
+								<p class="footer_titles">For Developers</p>
+								<div class="flex-col flex gap-6">
+									<a class="footer_link" href="#">Documentation</a>
+									<a class="footer_link" href="#">Payform best practices</a>
+								</div>
+							</div>
+							<div class="flex flex-col gap-4 sm:gap-10 lg:gap-[3.125rem]">
+								<p class="footer_titles">Two pages like any other</p>
+								<div class="flex-col flex gap-6">
+									<a class="footer_link" href="#">Terms and Conditions</a>
+									<a class="footer_link" href="#">Privacy Policy</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="h-[0.063rem] w-full bg-mainYellow mb-12 lg:mb-[4.5rem]"
+					></div>
+					<p class="text-center text-[#DDD]">
+						No copyrights. We’ve been in crypto since January 3, 2009.
+					</p>
+				</div>
+			</footer>
+		</main>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script src="./script.js"></script>
+	</body>
 </html>
